@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+:root {
+  --blanco: ;
+  --negro: ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cajaTxt {
+  width: 70%;
+  margin: 0% 15%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, p, pre {
+  font-family: 'Alegreya';
+}
+
+h1 {
+  font: normal 2.5em/1em 'Alegreya', serif;
+  padding: 2% 0%;
+}
+
+h2 {
+  font: normal 1em/1.4em 'AlegreyaSC', serif;
+  max-width: 50%;
+  text-align: center;
+}
+
+h3 {
+
+}
+
+header span {
+  font: normal italic normal 1em/1.3em 'Alegreya', serif;
+  padding: 2% 0%;
+}
+
+p {
+
+}
+
+pre {
+
+}
+
+.versalitas {
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,11 @@
+# Laberinto endecasílabo
+
+Si imaginamos el espacio de la literatura, nos encontramos en un universo de papel e imaginación: la tinta nos habla y también nos reconoce. Este universo constantemente se expande y se contrae, por ejemplo, las pantallas de nuestros dispositivos se pueden llenar de poesía, ensayo y entrecruzadas narrativas; de igual forma, el brillo de nuestras pantallas cambia cuando pasamos hacia otras tonalidades digitales: cada soporte modifica nuestra relación con las palabras y la lectura también requiere distintos centro de gravitación para explorar nuestros pensamientos y emociones.
+
+*Laberinto endecasílabo* pretende explorar esas posibilidades a través del poema homónimo que escribió Sor Juana Inés de la Cruz durante el S. XVII. Nos encontramos dentro de un mundo barroco que experimenta constantemente con las materialidades del discurso, las proyecciones de la complejidad y la articulación de ornamentos hasta su delirio extático. Sor Juana advierte que un texto también resguarda las posibilidades del movimiento, característica elemental para proponer una arquitectura que resguarda la multiplicidad de lecturas. La versión de Sor Juana ofrece tres lecturas posibles. La primera se puede seguir sin modificar al texto original; las otras dos, requieren que el lector intervenga. Por ejemplo, si consideramos el primer verso: *Amante,—caro,—dulce Esposo mío*. Las lecturas serían las siguientes: 
+
+a. Amante,—caro,—dulce Esposo mío,
+b. Amante, dulce Esposo mío
+c. Caro, dulce Esposo mío
+
+Creo que este poema representa un transcurso hacia los pasillos de un laberinto textual que cambia sus paredes, la disposición métrica y la resonancia de una lectura en voz alta. Creo que también es un artefacto lúdico que nos señala el sentido de la magia textual: la naturaleza de las palabras cambia cuando modificamos sus aspectos iniciales. Este pretexto lúdico me hizo entusiasmarme y proponer una intervención un poco más radical sobre el mismo poema: las palabras que habitan entre las rayas —los pasillos del laberinto— pueden desplazarse hacia otras regiones del poema, desatando una pluralidad distinta para cada lector.
