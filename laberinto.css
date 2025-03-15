@@ -39,8 +39,8 @@ h1 {
 }
 
 h2 {
-  font: normal 1em/1.4em 'AlegreyaSC', serif;
-  max-width: 50%;
+  font: normal 1em/1em 'AlegreyaSC', serif;
+  width: 50%;
   text-align: center;
 }
 
@@ -51,17 +51,58 @@ h3 {
 header span {
   font: normal italic normal 1em/1.3em 'Alegreya', serif;
   padding: 2% 0%;
+  text-align: center;
 }
 
 p {
-
+  
 }
 
 pre {
-
+  font: normal 1.1em/1.4em 'Alegreya', serif;
 }
 
 .versalitas {
   font-variant: small-caps;
   letter-spacing: 2px;
+}
+
+button {
+  font: italic normal normal 1em/1.2em '', monospace;
+  padding: 5px 10px;
+  border: none;
+  background-color: coral;
+}
+
+button:hover {
+  background-color: #90EE90;
+  color: var(--blanco);
+}
+
+@media only screen and (max-width: 670px) {
+  
+  .cajaTxt {
+    width: 90%;
+    margin: 0% 5%;
+  }
+
+  header {
+    margin: 5% 0%;
+  }
+
+  main {
+    margin: 2% 0%;
+  }
+
+  h1 {
+    font-size: 2em;
+    padding: 3% 0%;
+  }
+
+  h2 {
+    width: 100%;
+    font-size: 1em;
+    padding: 5% 0%;
+  }
+
 }
