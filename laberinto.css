@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
 :root {
-  --blanco: ;
-  --negro: ;
+  --blanco: #FFF5EE;
+  --negro: #191919;
+}
+
+body {
+  background-color: var(--blanco);
+  color: var(--negro);
 }
 
 * {
@@ -80,6 +85,11 @@ button:hover {
 }
 
 @media only screen and (max-width: 670px) {
+  
+  body {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
   
   .cajaTxt {
     width: 90%;
