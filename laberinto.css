@@ -34,13 +34,20 @@ main {
   align-items: center;
 }
 
+section canvas {
+  margin: 3% 0% 0%;
+  background-color: #ab0033;
+  overflow: visible;
+  width: 100%;
+}
+
 h1, h2, h3, p, pre {
   font-family: 'Alegreya';
 }
 
 h1 {
   font: normal 2.5em/1em 'Alegreya', serif;
-  padding: 10% 0% 0%;
+  padding: 3% 0% 0%;
 }
 
 h2 {

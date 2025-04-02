@@ -15,6 +15,11 @@
 </head>
 <body>
   <div class="cajaTxt">
+
+    <section id="soyUnaPortada">
+      <canvas id="figuraPortada" width="1200" height="200"></canvas>
+    </section>
+
     <header id="encabezado">
       <h1>Laberinto endecasílabo</h1>
       <h2>Sor Juana Inés de la Cruz</h2>
@@ -73,7 +78,7 @@
   parados —— <span id="verso31">calmen</span> ——el Amor y el Tiempo
   suspensos —— <span id="verso32">de que</span> —— nos miren milagrosos.
       </pre>
-      <a href="#encabezado"><button onclick="cambiarIntermedios()">Nuevo laberinto</button></a>
+      <a href="#soyUnaPortada"><button onclick="cambiarIntermedios(), dibujar()">Nuevo laberinto</button></a>
       </main>
     </div>
     
@@ -130,4 +135,6 @@
   };
 
   </script>
+
+  <script src="figuraslaberinto.js" ></script>
 </body>
