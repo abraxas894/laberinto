@@ -35,106 +35,122 @@
     <section class="ornamenta">
       <p>&#x2767;</p> <!-- [2767]: ❧ -->
     </section>
+    
+    <section class="botones">
+      <div id="primerBoton" onclick="cambiarPrimera(), dibujar()">
+        <button>Primera columna</button>
+      </div>
+      <div id="segundoBoton" onclick="cambiarIntermedios(), dibujar()">
+        <button>Segunda columna</button>
+      </div>
+      <div id="tercerBoton" onclick="cambiarTercera(), dibujar()">
+        <button>Tercera columna</button>
+      </div>
+      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar()">
+        <button>Labrado laberinto</button>
+      </div>
+    </section>
 
+    <section class="ornamenta">
+      <p>&#x2767;</p> <!-- [2767]: ❧ -->
+    </section>
+    
     <main>
       <pre id="poema">
-  Amante, —— <span id="verso01">caro</span> —— dulce Esposo mío,
-  festivo y —— <span id="verso02">pronto</span> —— tus felices años
-  alegre —— <span id="verso03">canta</span> —— sólo mi cariño,
-  dichoso —— <span id="verso04">porque</span> —— puede celebrarlos.
+  <span id="v1c1">Amante,</span> —— <span id="verso1">caro</span> —— <span id="v1c3">dulce Esposo mío,</span>
+  <span id="v2c1">festivo y</span> —— <span id="verso2">pronto</span> —— <span id="v2c3">tus felices años</span>
+  <span id="v3c1">alegre</span> —— <span id="verso3">canta</span> —— <span id="v3c3">sólo mi cariño,</span>
+  <span id="v4c1">dichoso</span> —— <span id="verso4">porque</span> —— <span id="v4c3">puede celebrarlos.</span>
 
-  Ofrendas —— <span id="verso05">finas</span> —— a tu obsequio sean
-  amantes —— <span id="verso06">señas</span> —— de fino holocausto,
-  al pecho —— <span id="verso07">rica</span> —— mi corazón, joya,
-  al cuello —— <span id="verso08">dulces</span> —— cadenas mis brazos.
+  <span id="v5c1">Ofrendas</span> —— <span id="verso5">finas</span> —— <span id="v5c3">a tu obsequio sean</span>
+  <span id="v6c1">amantes</span> —— <span id="verso6">señas</span> —— <span id="v6c3">de fino holocausto,</span>
+  <span id="v7c1">al pecho</span> —— <span id="verso7">rica</span> —— <span id="v7c3">mi corazón, joya,</span>
+  <span id="v8c1">al cuello</span> —— <span id="verso8">dulces</span> —— <span id="v8c3">cadenas mis brazos.</span>
 
-  Te enlacen —— <span id="verso09">firmes</span> —— pues mi amor no ignora
-  ufano —— <span id="verso10">siempre</span> —— que son a tu agrado
-  voluntad —— <span id="verso11">y ojos</span> —— las mejores joyas,
-  aceptas —— <span id="verso12">solas</span> —— las de mis halagos.
+  <span id="v9c1">Te enlacen</span> —— <span id="verso9">firmes</span> —— <span id="v9c3">pues mi amor no ignora</span>
+  <span id="v10c1">ufano</span> —— <span id="verso10">siempre</span> —— <span id="v10c3">que son a tu agrado</span>
+  <span id="v11c1">voluntad</span> —— <span id="verso11">y ojos</span> —— <span id="v11c3">las mejores joyas,</span>
+  <span id="v12c1">aceptas</span> —— <span id="verso12">solas</span> —— <span id="v12c3">las de mis halagos.</span>
 
-  No altivas —— <span id="verso13">sirvan</span> —— ,no, en demostraciones
-  de ilustres —— <span id="verso14">fiestas,</span> —— de altos aparatos,
-  lucidas —— <span id="verso15">danzas,</span> —— célebres festines,
-  costosas —— <span id="verso16">galas</span> —— de regios saraos.
+  <span id="v13c1">No altivas</span> —— <span id="verso13">sirvan</span> —— <span id="v13c3">,no, en demostraciones</span>
+  <span id="v14c1">de ilustres</span> —— <span id="verso14">fiestas,</span> —— <span id="v14c3">de altos aparatos,</span>
+  <span id="v15c1">lucidas</span> —— <span id="verso15">danzas,</span> —— <span id="v15c3">célebres festines,</span>
+  <span id="v16c1">costosas</span> —— <span id="verso16">galas</span> —— <span id="v16c3">de regios saraos.</span>
 
-  Las cortas —— <span id="verso17">muestras de</span> —— el cariño acepta,
-  víctimas —— <span id="verso18">puras de</span> —— el afecto casto
-  de mi amor, —— <span id="verso19">puesto</span> —— que te ofrezco, Esposa
-  dichosa, —— <span id="verso20">la que,</span> —— Dueño, te consagro.
+  <span id="v17c1">Las cortas</span> —— <span id="verso17">muestras de</span> —— <span id="v17c3">el cariño acepta,</span>
+  <span id="v18c1">víctimas</span> —— <span id="verso18">puras de</span> —— <span id="v18c3">el afecto casto</span>
+  <span id="v19c1">de mi amor,</span> —— <span id="verso19">puesto</span> —— <span id="v19c3">que te ofrezco, Esposa</span>
+  <span id="v20c1">dichosa,</span> —— <span id="verso20">la que,</span> —— <span id="v20c3">Dueño, te consagro.</span>
 
-  Y suple, —— <span id="verso21">porque</span> —— si mi obsequio humilde
-  para ti, —— <span id="verso22">visto,</span> —— pareciere acaso,
-  pido que, —— <span id="verso23">cuerdo,</span> —— no aprecies la ofrenda
-  escasa y —— <span id="verso24">corta</span> —— sino mi cuidado.
+  <span id="v21c1">Y suple,</span> —— <span id="verso21">porque</span> —— <span id="v21c3">si mi obsequio humilde</span>
+  <span id="v22c1">para ti,</span> —— <span id="verso22">visto,</span> —— <span id="v22c3">pareciere acaso,</span>
+  <span id="v23c1">pido que,</span> —— <span id="verso23">cuerdo,</span> —— <span id="v23c3">no aprecies la ofrenda</span>
+  <span id="v24c1">escasa y</span> —— <span id="verso24">corta</span> —— <span id="v24c3">sino mi cuidado.</span>
 
-  Ansioso —— <span id="verso25">quiere</span> —— con mi propia vida
-  fino mi —— <span id="verso26">amor</span> —— acrecentar tus años
-  felices, —— <span id="verso27">y yo</span> —— quiero; pero es una,
-  unida, —— <span id="verso28">sola</span> —— la que anima a entreambos.
+  <span id="v25c1">Ansioso</span> —— <span id="verso25">quiere</span> —— <span id="v25c3">con mi propia vida</span>
+  <span id="v26c1">fino mi</span> —— <span id="verso26">amor</span> —— <span id="v26c3">acrecentar tus años</span>
+  <span id="v27c1">felices,</span> —— <span id="verso27">y yo</span> —— <span id="v27c3">quiero; pero es una,</span>
+  <span id="v28c1">unida,</span> —— <span id="verso28">sola</span> —— <span id="v28c3">la que anima a entreambos.</span>
 
-  Eterno —— <span id="verso29">vive:</span> —— vive, y yo en ti viva
-  eterna, —— <span id="verso30">para que</span> —— identificados,
-  parados —— <span id="verso31">calmen</span> ——el Amor y el Tiempo
-  suspensos —— <span id="verso32">de que</span> —— nos miren milagrosos.
+  <span id="v29c1">Eterno</span> —— <span id="verso29">vive:</span> —— <span id="v29c3">vive, y yo en ti viva</span>
+  <span id="v30c1">eterna,</span> —— <span id="verso30">para que</span> —— <span id="v30c3">identificados,</span>
+  <span id="v31c1">parados</span> —— <span id="verso31">calmen</span> —— <span id="v31c3">el Amor y el Tiempo</span>
+  <span id="v32c1">suspensos</span> —— <span id="verso32">de que</span> —— <span id="v32c3">nos miren milagrosos.</span>
       </pre>
-      <a href="#soyUnaPortada"><button onclick="cambiarIntermedios(), dibujar()">Nuevo laberinto</button></a>
       </main>
     </div>
     
+  <script src="laberinto.js"></script>
+  <script src="figuraslaberinto.js" ></script>
+
   <script>
+    
+    /* let aleatorio32 = (array) => {
+      let grupoNumeros = ['', '', '', '', ''];
+      for (let i = 1; i <= grupoNumeros.l; i++) {
+        
+        Math.floor(Math.random() * 32);
+          if (aleatorio32 === 0) {
+            aleatorio32 =+ 1;
+          } 
+        console.log(aleatorio32);
 
-  const intermedios = ['caro', 'pronto', 'canta', 'porque', 'finas', 'señas', 'rica', 'dulces', 'firmes,', 'siempre,', 'y ojos', 'solas,', 'sirvan', 'fiestas,', 'danzas,', 'galas', 'muestras de', 'puras de', 'puesto', 'la que,', 'porque', 'visto,', 'cuerdo,', 'corta,', 'quiere', 'amor', 'y yo', 'sola,', 'vive:', 'para que', 'calmen', 'de que'];
+      };
 
-  // Se utiliza un algortimo Fisher-Yates para el ordenamiento estocástico
+    }; 
 
-  const arrayaleatorio = (array) => {
-    for (let i = array.length - 1; i >= 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let k = array[i];
-      array[i] = array[j];
-      array[j] = k;
+    const tomarVersosAleatorios = () => {
+      rangoAleatorio(5, 32);
     }
-    return array;
+    
+    
+    let tomarVersos = document.getElementById(`verso${aleatorio32}`);
+    tomarVersos.style.textDecorationLine = 'line-through';
+
+    const rayaAleatoria = (fragmento) => {
+      fragmento.style.textDecorationLine = '';
+    };
+
+    tomarVersos.style.textDecorationThickness = `${rangoAleatorio(20, 80)}%`;
+    console.log(tomarVersos); */
+
+   
+    let [a, b, c, d, e] = Array(5).fill().map(() => Math.floor(Math.random() * 900));
+  
+  const obtenerColumna = () => {
+    for (let i = 1; i <= 32; i++) {
+      let columna01 = document.getElementById(`v${i}c1`).innerHTML;
+      let columna03 = document.getElementById(`v${i}c3`).innerHTML;
+
+      let juntarColumna01 = columna01.join();
+      console.log(juntarColumna01);
+
     }
+  }
 
-  const cambiarIntermedios = () => {
-    let celda = arrayaleatorio(intermedios);
-    document.getElementById('verso01').innerHTML = celda[0];
-    document.getElementById('verso02').innerHTML = celda[1];
-    document.getElementById('verso03').innerHTML = celda[2];
-    document.getElementById('verso04').innerHTML = celda[3];
-    document.getElementById('verso05').innerHTML = celda[4];
-    document.getElementById('verso06').innerHTML = celda[5];
-    document.getElementById('verso07').innerHTML = celda[6];
-    document.getElementById('verso08').innerHTML = celda[7];
-    document.getElementById('verso09').innerHTML = celda[8];
-    document.getElementById('verso10').innerHTML = celda[9];
-    document.getElementById('verso11').innerHTML = celda[10];
-    document.getElementById('verso12').innerHTML = celda[11];
-    document.getElementById('verso13').innerHTML = celda[12];
-    document.getElementById('verso14').innerHTML = celda[13];
-    document.getElementById('verso15').innerHTML = celda[14];
-    document.getElementById('verso16').innerHTML = celda[15];
-    document.getElementById('verso17').innerHTML = celda[16];
-    document.getElementById('verso18').innerHTML = celda[17];
-    document.getElementById('verso19').innerHTML = celda[18];
-    document.getElementById('verso20').innerHTML = celda[19];
-    document.getElementById('verso21').innerHTML = celda[20];
-    document.getElementById('verso22').innerHTML = celda[21];
-    document.getElementById('verso23').innerHTML = celda[22];
-    document.getElementById('verso24').innerHTML = celda[23];
-    document.getElementById('verso25').innerHTML = celda[24];
-    document.getElementById('verso26').innerHTML = celda[25];
-    document.getElementById('verso27').innerHTML = celda[26];
-    document.getElementById('verso28').innerHTML = celda[27];
-    document.getElementById('verso29').innerHTML = celda[28];
-    document.getElementById('verso30').innerHTML = celda[29];
-    document.getElementById('verso31').innerHTML = celda[30];
-    document.getElementById('verso32').innerHTML = celda[31];
-  };
+  obtenerColumna();
 
+    
   </script>
 
-  <script src="figuraslaberinto.js" ></script>
 </body>

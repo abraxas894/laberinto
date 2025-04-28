@@ -35,10 +35,11 @@ main {
 }
 
 section canvas {
-  margin: 3% 0% 0%;
+  width: 100%;
+  margin: 0% 0% 0%;
   background-color: #ab0033;
   overflow: visible;
-  width: 100%;
+  border-radius: 0px 0px 10px 10px;
 }
 
 h1, h2, h3, p, pre {
@@ -75,6 +76,11 @@ pre {
   font: normal 1.1em/1.4em 'Alegreya', serif;
 }
 
+#v1c1::first-letter {
+  text-transform: uppercase;
+  color: #008b8b;
+}
+
 .ornamenta {
   text-align: center;
   margin: 0% 0% 2%;
@@ -85,18 +91,80 @@ pre {
   letter-spacing: 2px;
 }
 
-button {
+.botones {
   width: 100%;
-  font: italic normal normal 1em/1.2em '', monospace;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-button:hover {
-  background-color: #90EE90;
-  color: var(--blanco);
+.botones div {
+  width: 40%;
+  margin: 1% 1%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blanco);
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.botones div:hover {
+  background-color: var(--negro);
+}
+
+#primerBoton {
+  background-image: url(img/mundi.jpg);
+  background-position: 0% 50%;
+  background-blend-mode: exclusion;
+}
+
+#primerBoton:hover {
+  background-color: #ab0033;
+}
+
+#segundoBoton {
+  background-image: url(img/temaPiedad.jpg);
+  background-position: 0% 3%;
+  background-color: #FFB6C1;
+  background-blend-mode: difference;
+}
+
+#segundoBoton:hover{
+  background-color: #4682B4;
+}
+
+#tercerBoton {
+  background-image: url(img/cristoZurbaran.jpg);
+  background-position: 0% 25%;
+  background-blend-mode: difference;
+  background-color: #663399;
+}
+
+#tercerBoton:hover {
+  background-blend-mode: luminosity;
+}
+
+#laberintoBoton {
+  background-image: url(img/Gentileschi.jpg);
+  background-position: 90% 20%;
+  
+  mix-blend-mode: difference;
+}
+
+#laberintoBoton:hover {
+  background-color: #8b00b8;
+  background-blend-mode: exclusion;
+}
+
+button {
+  font: italic normal normal 1em/1.2em '', monospace;
+  padding: 3% 10%;
+  border-width: 0px;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 670px) {
