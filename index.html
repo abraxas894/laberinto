@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script defer src="laberinto.js"></script>
+  <script defer src="figuraslaberinto.js" ></script>
+  <script defer src="dibujarTriangulos.js" ></script>
 </head>
 <body>
   <div class="cajaTxt">
@@ -35,6 +38,10 @@
     <section class="ornamenta">
       <p>&#x2767;</p> <!-- [2767]: ❧ -->
     </section>
+
+    <!-- <div id='' style='background-color: #00008b;'>
+      <canvas width='1200' height='200' id='hola'></canvas>
+    </div> s-->
     
     <section class="botones">
       <div id="primerBoton" onclick="cambiarPrimera(), dibujar()">
@@ -46,63 +53,56 @@
       <div id="tercerBoton" onclick="cambiarTercera(), dibujar()">
         <button>Tercera columna</button>
       </div>
-      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar()">
+      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar(), vecesLineas();">
         <button>Labrado laberinto</button>
       </div>
     </section>
-
-    <section class="ornamenta">
-      <p>&#x2767;</p> <!-- [2767]: ❧ -->
-    </section>
-    
+   
     <main>
       <pre id="poema">
-  <span id="v1c1">Amante,</span> —— <span id="verso1">caro</span> —— <span id="v1c3">dulce Esposo mío,</span>
-  <span id="v2c1">festivo y</span> —— <span id="verso2">pronto</span> —— <span id="v2c3">tus felices años</span>
-  <span id="v3c1">alegre</span> —— <span id="verso3">canta</span> —— <span id="v3c3">sólo mi cariño,</span>
-  <span id="v4c1">dichoso</span> —— <span id="verso4">porque</span> —— <span id="v4c3">puede celebrarlos.</span>
+  <span id="v1c1">Amante,</span> —— <span id="v1c2">caro</span> —— <span id="v1c3">dulce Esposo mío,</span>
+  <span id="v2c1">festivo y</span> —— <span id="v2c2">pronto</span> —— <span id="v2c3">tus felices años</span>
+  <span id="v3c1">alegre</span> —— <span id="v3c2">canta</span> —— <span id="v3c3">sólo mi cariño,</span>
+  <span id="v4c1">dichoso</span> —— <span id="v4c2">porque</span> —— <span id="v4c3">puede celebrarlos.</span>
 
-  <span id="v5c1">Ofrendas</span> —— <span id="verso5">finas</span> —— <span id="v5c3">a tu obsequio sean</span>
-  <span id="v6c1">amantes</span> —— <span id="verso6">señas</span> —— <span id="v6c3">de fino holocausto,</span>
-  <span id="v7c1">al pecho</span> —— <span id="verso7">rica</span> —— <span id="v7c3">mi corazón, joya,</span>
-  <span id="v8c1">al cuello</span> —— <span id="verso8">dulces</span> —— <span id="v8c3">cadenas mis brazos.</span>
+  <span id="v5c1">Ofrendas</span> —— <span id="v5c2">finas</span> —— <span id="v5c3">a tu obsequio sean</span>
+  <span id="v6c1">amantes</span> —— <span id="v6c2">señas</span> —— <span id="v6c3">de fino holocausto,</span>
+  <span id="v7c1">al pecho</span> —— <span id="v7c2">rica</span> —— <span id="v7c3">mi corazón, joya,</span>
+  <span id="v8c1">al cuello</span> —— <span id="v8c2">dulces</span> —— <span id="v8c3">cadenas mis brazos.</span>
 
-  <span id="v9c1">Te enlacen</span> —— <span id="verso9">firmes</span> —— <span id="v9c3">pues mi amor no ignora</span>
-  <span id="v10c1">ufano</span> —— <span id="verso10">siempre</span> —— <span id="v10c3">que son a tu agrado</span>
-  <span id="v11c1">voluntad</span> —— <span id="verso11">y ojos</span> —— <span id="v11c3">las mejores joyas,</span>
-  <span id="v12c1">aceptas</span> —— <span id="verso12">solas</span> —— <span id="v12c3">las de mis halagos.</span>
+  <span id="v9c1">Te enlacen</span> —— <span id="v9c2">firmes</span> —— <span id="v9c3">pues mi amor no ignora</span>
+  <span id="v10c1">ufano</span> —— <span id="v10c2">siempre</span> —— <span id="v10c3">que son a tu agrado</span>
+  <span id="v11c1">voluntad</span> —— <span id="v11c2">y ojos</span> —— <span id="v11c3">las mejores joyas,</span>
+  <span id="v12c1">aceptas</span> —— <span id="v12c2">solas</span> —— <span id="v12c3">las de mis halagos.</span>
 
-  <span id="v13c1">No altivas</span> —— <span id="verso13">sirvan</span> —— <span id="v13c3">,no, en demostraciones</span>
-  <span id="v14c1">de ilustres</span> —— <span id="verso14">fiestas,</span> —— <span id="v14c3">de altos aparatos,</span>
-  <span id="v15c1">lucidas</span> —— <span id="verso15">danzas,</span> —— <span id="v15c3">célebres festines,</span>
-  <span id="v16c1">costosas</span> —— <span id="verso16">galas</span> —— <span id="v16c3">de regios saraos.</span>
+  <span id="v13c1">No altivas</span> —— <span id="v13c2">sirvan</span> —— <span id="v13c3">,no, en demostraciones</span>
+  <span id="v14c1">de ilustres</span> —— <span id="v14c2">fiestas,</span> —— <span id="v14c3">de altos aparatos,</span>
+  <span id="v15c1">lucidas</span> —— <span id="v15c2">danzas,</span> —— <span id="v15c3">célebres festines,</span>
+  <span id="v16c1">costosas</span> —— <span id="v16c2">galas</span> —— <span id="v16c3">de regios saraos.</span>
 
-  <span id="v17c1">Las cortas</span> —— <span id="verso17">muestras de</span> —— <span id="v17c3">el cariño acepta,</span>
-  <span id="v18c1">víctimas</span> —— <span id="verso18">puras de</span> —— <span id="v18c3">el afecto casto</span>
-  <span id="v19c1">de mi amor,</span> —— <span id="verso19">puesto</span> —— <span id="v19c3">que te ofrezco, Esposa</span>
-  <span id="v20c1">dichosa,</span> —— <span id="verso20">la que,</span> —— <span id="v20c3">Dueño, te consagro.</span>
+  <span id="v17c1">Las cortas</span> —— <span id="v17c2">muestras de</span> —— <span id="v17c3">el cariño acepta,</span>
+  <span id="v18c1">víctimas</span> —— <span id="v18c2">puras de</span> —— <span id="v18c3">el afecto casto</span>
+  <span id="v19c1">de mi amor,</span> —— <span id="v19c2">puesto</span> —— <span id="v19c3">que te ofrezco, Esposa</span>
+  <span id="v20c1">dichosa,</span> —— <span id="v20c2">la que,</span> —— <span id="v20c3">Dueño, te consagro.</span>
 
-  <span id="v21c1">Y suple,</span> —— <span id="verso21">porque</span> —— <span id="v21c3">si mi obsequio humilde</span>
-  <span id="v22c1">para ti,</span> —— <span id="verso22">visto,</span> —— <span id="v22c3">pareciere acaso,</span>
-  <span id="v23c1">pido que,</span> —— <span id="verso23">cuerdo,</span> —— <span id="v23c3">no aprecies la ofrenda</span>
-  <span id="v24c1">escasa y</span> —— <span id="verso24">corta</span> —— <span id="v24c3">sino mi cuidado.</span>
+  <span id="v21c1">Y suple,</span> —— <span id="v21c2">porque</span> —— <span id="v21c3">si mi obsequio humilde</span>
+  <span id="v22c1">para ti,</span> —— <span id="v22c2">visto,</span> —— <span id="v22c3">pareciere acaso,</span>
+  <span id="v23c1">pido que,</span> —— <span id="v23c2">cuerdo,</span> —— <span id="v23c3">no aprecies la ofrenda</span>
+  <span id="v24c1">escasa y</span> —— <span id="v24c2">corta</span> —— <span id="v24c3">sino mi cuidado.</span>
 
-  <span id="v25c1">Ansioso</span> —— <span id="verso25">quiere</span> —— <span id="v25c3">con mi propia vida</span>
-  <span id="v26c1">fino mi</span> —— <span id="verso26">amor</span> —— <span id="v26c3">acrecentar tus años</span>
-  <span id="v27c1">felices,</span> —— <span id="verso27">y yo</span> —— <span id="v27c3">quiero; pero es una,</span>
-  <span id="v28c1">unida,</span> —— <span id="verso28">sola</span> —— <span id="v28c3">la que anima a entreambos.</span>
+  <span id="v25c1">Ansioso</span> —— <span id="v25c2">quiere</span> —— <span id="v25c3">con mi propia vida</span>
+  <span id="v26c1">fino mi</span> —— <span id="v26c2">amor</span> —— <span id="v26c3">acrecentar tus años</span>
+  <span id="v27c1">felices,</span> —— <span id="v27c2">y yo</span> —— <span id="v27c3">quiero; pero es una,</span>
+  <span id="v28c1">unida,</span> —— <span id="v28c2">sola</span> —— <span id="v28c3">la que anima a entreambos.</span>
 
-  <span id="v29c1">Eterno</span> —— <span id="verso29">vive:</span> —— <span id="v29c3">vive, y yo en ti viva</span>
-  <span id="v30c1">eterna,</span> —— <span id="verso30">para que</span> —— <span id="v30c3">identificados,</span>
-  <span id="v31c1">parados</span> —— <span id="verso31">calmen</span> —— <span id="v31c3">el Amor y el Tiempo</span>
-  <span id="v32c1">suspensos</span> —— <span id="verso32">de que</span> —— <span id="v32c3">nos miren milagrosos.</span>
+  <span id="v29c1">Eterno</span> —— <span id="v29c2">vive:</span> —— <span id="v29c3">vive, y yo en ti viva</span>
+  <span id="v30c1">eterna,</span> —— <span id="v30c2">para que</span> —— <span id="v30c3">identificados,</span>
+  <span id="v31c1">parados</span> —— <span id="v31c2">calmen</span> —— <span id="v31c3">el Amor y el Tiempo</span>
+  <span id="v32c1">suspensos</span> —— <span id="v32c2">de que</span> —— <span id="v32c3">nos miren milagrosos.</span>
       </pre>
       </main>
     </div>
     
-  <script src="laberinto.js"></script>
-  <script src="figuraslaberinto.js" ></script>
-
   <script>
     
     /* let aleatorio32 = (array) => {

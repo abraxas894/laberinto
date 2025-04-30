@@ -39,9 +39,15 @@ const cambiarPrimera = () => {
 
 const cambiarIntermedios = () => {
   let celda = arrayaleatorio(intermedios);
+
   for (let i = 1;  i <= 32; i++) {
-    document.getElementById(`verso${i}`).innerHTML = celda[i];
+    document.getElementById(`v${i}c2`).innerHTML = celda[i];
   }
+  for (let j = 2; j <= 32; j = j + 2) {
+    document.getElementById(`v${j}c2`).style.color = '#8b008b';
+  }
+  for (k = 3; k <= 32; k = k + Math.floor(Math.random() * 4))
+    document.getElementById(`v${k}c2`).style.textDecorationLine = 'line-through';
 }
 
 // cambiarTercera() modifca el orden de los versos de la última columna
@@ -51,11 +57,25 @@ const cambiarTercera = () => {
   for (let i = 1; i <= 32; i++) {
     document.getElementById(`v${i}c3`).innerHTML = nuevaTercera[i];
   }
-    
+  for (let j = 4; j <= 32; j = j + 4) {
+    document.getElementById(`v${j}c3`).style.color = '#00008b';
+  }   
 }
 
+// funcion para trazar pasillos del laberinto
 
+const lineasLaberinto = () => {
+  let unVerso = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
+  unVerso.style.textDecorationLine = 'line-through';
+  unVerso.style.textDecorationThickness = `${rangoAleatorio(10, 90)}%`;
+  unVerso.style.textDecorationColor = '#663399';
+}
 
-
-
+const vecesLineas = () => {
+  let repetirVeces = rangoAleatorio(20, 35);
+  console.log(`Existen ${repetirVeces} pasillos`);
+  for (let i = 1; i <= repetirVeces; i++) {
+    lineasLaberinto();
+  }
+}
 
