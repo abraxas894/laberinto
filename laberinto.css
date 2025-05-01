@@ -175,7 +175,19 @@ button {
   body {
     background-color: var(--negro);
     color: var(--blanco);
+    animation-name: nocturno; 
+animation-iteration-count: infinite; 
+animation-duration: 60s;
   }
+
+@keyframes nocturno{
+0% {background-color: #191919}
+25% {background-color: #fff5ee}
+50% {background-color: #fff5ee}
+75% {background-color: #fff5ee}
+100% {background-color: #191919}
+
+}
   
   .cajaTxt {
     width: 90%;
