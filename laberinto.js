@@ -20,17 +20,25 @@ const arrayaleatorio = (array) => {
 
 const rangoAleatorio = (max, min) => {
   return (Math.floor(Math.random() * (max - min))) + min;
-};
+}
+
+// color aleatorio
+
+const distintoColorAleatorio = () => {
+  const cadaRGB = () => Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+  const color = `#${cadaRGB()}${cadaRGB()}${cadaRGB()}`;
+  return color;
+}
 
 // cambiarPrimera() modifica el orden de los versos de la primera columna
 
 const cambiarPrimera = () => {
   let nuevaPrimera = arrayaleatorio(primeraColumna);
-  for (let i = 1; i <= 32; i++) {
-    document.getElementById(`v${i}c1`).innerHTML = nuevaPrimera[i];
+  for (let i = 0; i <= 31; i++) {
+    document.getElementById(`v${i + 1}c1`).innerHTML = nuevaPrimera[i];
   }
   for (let j = 1; j <= 32; j = j + 4) {
-    document.getElementById(`v${j}c1`).style.color = '#8b0000';
+    document.getElementById(`v${j}c1`).style.color = '#F08080';
     document.getElementById(`v${j}c1`).style.textTransform = 'uppercase';
   }
 }
@@ -39,26 +47,33 @@ const cambiarPrimera = () => {
 
 const cambiarIntermedios = () => {
   let celda = arrayaleatorio(intermedios);
-
-  for (let i = 1;  i <= 32; i++) {
-    document.getElementById(`v${i}c2`).innerHTML = celda[i];
+  for (let i = 0;  i <= 31; i++) {
+    document.getElementById(`v${i + 1}c2`).innerHTML = celda[i];
   }
-  for (let j = 2; j <= 32; j = j + 2) {
+  for (let j = 2; j <= 32; j = j + 4) {
     document.getElementById(`v${j}c2`).style.color = '#8b008b';
+    document.getElementById(`v${j}c2`).style.fontVariant = 'small-caps';
+    document.getElementById(`v${j}c2`).style.letterSpacing = '2px';
   }
-  for (k = 3; k <= 32; k = k + Math.floor(Math.random() * 4))
-    document.getElementById(`v${k}c2`).style.textDecorationLine = 'line-through';
+  for (let k = 3; k <= 32; k = k + 4) {
+    document.getElementById(`v${k}c2`).style.color = '#8b008b';
+    document.getElementById(`v${k}c2`).style.fontVariant = 'small-caps';
+    document.getElementById(`v${k}c2`).style.letterSpacing = '2px';
+  }
 }
 
 // cambiarTercera() modifca el orden de los versos de la última columna
 
 const cambiarTercera = () => {
   let nuevaTercera = arrayaleatorio(terceraColumna);
-  for (let i = 1; i <= 32; i++) {
-    document.getElementById(`v${i}c3`).innerHTML = nuevaTercera[i];
+  for (let i = 0; i <= 31; i++) {
+    document.getElementById(`v${i + 1}c3`).innerHTML = nuevaTercera[i];
   }
   for (let j = 4; j <= 32; j = j + 4) {
-    document.getElementById(`v${j}c3`).style.color = '#00008b';
+    document.getElementById(`v${j}c3`).style.color = '#4169E1';
+    document.getElementById(`v${j}c3`).style.fontVariant = 'small-caps';
+    document.getElementById(`v${j}c3`).style.letterSpacing = '2px';
+    document.getElementById(`v${j}c3`).style.textSize = '.9em';
   }   
 }
 
@@ -68,7 +83,7 @@ const lineasLaberinto = () => {
   let unVerso = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
   unVerso.style.textDecorationLine = 'line-through';
   unVerso.style.textDecorationThickness = `${rangoAleatorio(10, 90)}%`;
-  unVerso.style.textDecorationColor = '#663399';
+  unVerso.style.textDecorationColor = `${distintoColorAleatorio()}`;
 }
 
 const vecesLineas = () => {

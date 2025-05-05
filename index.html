@@ -1,20 +1,29 @@
 <!Doctype html>
-<html lang="es-MX" >
+<html lang="es-MX" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
-  <title>Laberinto</title>
+  <title>Laberinto endecasílabo</title>
   <meta charset="utf-8" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="" />
+  <meta name="description" content="Laberinto endecasílabo pretende explorar las posibilidades compositivas a través de generar múltiples lecturas del poema homónimo que escribió Sor Juana Inés de la Cruz durante el S. XVII." />
+  <meta name="keywords" content="laberinto endecasilabo, poemas sor juana, poesia generativa, poemas generativos, poemas que se escriben solos, poesia permutativa, poesia combinatoria, literatura expandida, poesia expandida" />
+  <meta name="author" content="Sor Juana Inés de la Cruz, ft. Eduardo Yael" />
   <meta name="" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="laberinto.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <script defer src="laberinto.js"></script>
-  <script defer src="figuraslaberinto.js" ></script>
-  <script defer src="dibujarTriangulos.js" ></script>
+  <script defer src="figuraslaberinto.js"></script>
+  <script defer src="dibujarTriangulos.js"></script>
+  <script defer src="laberintoOriginal.js"></script>
+  <meta property="og:site_name" content="Laberinto endecasílabo" /> 
+  <meta property="og:title" content="Laberinto endecasílabo" /> 
+  <meta name="og:description" content="Laberinto endecasílabo pretende explorar las posibilidades compositivas a través de generar múltiples lecturas del poema homónimo que escribió Sor Juana Inés de la Cruz durante el S. XVII." />
+  <meta property="og:url" content="https://abraxas894.github.io/laberinto/" /> 
+  <meta property="og:image" content="https://abraxas894.github.io/laberinto/img/silenio.jpg" />
+  <meta name="og:email" content="artd_kda@hotmail.com" />
+  <meta name="og:country-name" content="MEX" />
 </head>
 <body>
   <div class="cajaTxt">
@@ -23,17 +32,23 @@
       <canvas id="figuraPortada" width="1200" height="200"></canvas>
     </section>
 
+    <nav>
+      
+    </nav>
+
     <header id="encabezado">
       <h1>Laberinto endecasílabo</h1>
       <h2>Sor Juana Inés de la Cruz</h2>
-      <h3 class="versalitas">para dar los años la excelentísima señora condesa de galve, al excelentísimo señor conde, su esposo</h3>
+      <h4 class="versalitas">para dar los años la excelentísima señora condesa de galve, al excelentísimo señor conde, su esposo</h4>
       <span>(Léese tres veces, empezando la lección desde el principio, o desde cualesquiera de las dos órdenes de rayas)</span>
     </header>
 
-    <section>
-      <!-- <h3>Justificación</h3>
-      <p></p> -->
-    </section>
+    <!-- <section id="justificacion">
+      <h3>Sobre este laberinto</h3>
+      <div class="">
+        <p></p>
+      </div>
+    </section> -->
 
     <section class="ornamenta">
       <p>&#x2767;</p> <!-- [2767]: ❧ -->
@@ -44,17 +59,17 @@
     </div> s-->
     
     <section class="botones">
-      <div id="primerBoton" onclick="cambiarPrimera(), dibujar()">
-        <button>Primera columna</button>
+      <div id="primerBoton" onclick="cambiarPrimera(), dibujar()" title="🐰">
+        <button title="🍆">Primera columna</button>
       </div>
-      <div id="segundoBoton" onclick="cambiarIntermedios(), dibujar()">
-        <button>Segunda columna</button>
+      <div id="segundoBoton" onclick="cambiarIntermedios(), dibujar()" title="🌸">
+        <button title="✨">Segunda columna</button>
       </div>
-      <div id="tercerBoton" onclick="cambiarTercera(), dibujar()">
-        <button>Tercera columna</button>
+      <div id="tercerBoton" onclick="cambiarTercera(), dibujar()" title="👹">
+        <button title="✝️">Tercera columna</button>
       </div>
-      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar(), vecesLineas();">
-        <button>Labrado laberinto</button>
+      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar()" title="🌞">
+        <button title="🌝">Labrado laberinto</button>
       </div>
     </section>
    
@@ -100,57 +115,13 @@
   <span id="v31c1">parados</span> —— <span id="v31c2">calmen</span> —— <span id="v31c3">el Amor y el Tiempo</span>
   <span id="v32c1">suspensos</span> —— <span id="v32c2">de que</span> —— <span id="v32c3">nos miren milagrosos.</span>
       </pre>
+
+      <section class="botones">
+        <div id="orginialLaberinto" onclick="location.reload()" title="🐦‍🔥">
+          <button>Laberinto original</button>
+        </div>
+      </section>
+
       </main>
     </div>
-    
-  <script>
-    
-    /* let aleatorio32 = (array) => {
-      let grupoNumeros = ['', '', '', '', ''];
-      for (let i = 1; i <= grupoNumeros.l; i++) {
-        
-        Math.floor(Math.random() * 32);
-          if (aleatorio32 === 0) {
-            aleatorio32 =+ 1;
-          } 
-        console.log(aleatorio32);
-
-      };
-
-    }; 
-
-    const tomarVersosAleatorios = () => {
-      rangoAleatorio(5, 32);
-    }
-    
-    
-    let tomarVersos = document.getElementById(`verso${aleatorio32}`);
-    tomarVersos.style.textDecorationLine = 'line-through';
-
-    const rayaAleatoria = (fragmento) => {
-      fragmento.style.textDecorationLine = '';
-    };
-
-    tomarVersos.style.textDecorationThickness = `${rangoAleatorio(20, 80)}%`;
-    console.log(tomarVersos); */
-
-   
-    let [a, b, c, d, e] = Array(5).fill().map(() => Math.floor(Math.random() * 900));
-  
-  const obtenerColumna = () => {
-    for (let i = 1; i <= 32; i++) {
-      let columna01 = document.getElementById(`v${i}c1`).innerHTML;
-      let columna03 = document.getElementById(`v${i}c3`).innerHTML;
-
-      let juntarColumna01 = columna01.join();
-      console.log(juntarColumna01);
-
-    }
-  }
-
-  obtenerColumna();
-
-    
-  </script>
-
 </body>

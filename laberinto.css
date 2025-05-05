@@ -1,13 +1,22 @@
 @charset "UTF-8";
 
 :root {
-  --blanco: #FFF5EE;
+  --blanco: #faf0e6;
   --negro: #191919;
 }
 
 body {
-  background-image: linear-gradient(30deg, #fff5ee, #faebd7);
+  background-color: #FFE4E1;
   color: var(--negro);
+  animation-name: fondoCuerpo;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+}
+
+@keyframes fondoCuerpo {
+  0%  {background-color: #FFE4E1;}
+  50%  {background-color: #FAF0E6;}
+  100%  {background-color: #FFE4E1;}
 }
 
 * {
@@ -42,7 +51,7 @@ section canvas {
   border-radius: 0px 0px 10px 10px;
 }
 
-h1, h2, h3, p, pre {
+h1, h2, h3, h4, p, pre {
   font-family: 'Alegreya';
 }
 
@@ -56,7 +65,7 @@ h2 {
   padding: 0% 0% 3%;
 }
 
-h3 {
+h4 {
   font: normal 1em/1em 'AlegreyaSC', serif;
   width: 50%;
   text-align: center;
@@ -76,11 +85,6 @@ pre {
   font: normal 1.1em/1.4em 'Alegreya', serif;
 }
 
-#v1c1::first-letter {
-  text-transform: uppercase;
-  color: #008b8b;
-}
-
 .ornamenta {
   text-align: center;
   margin: 0% 0% 2%;
@@ -98,12 +102,11 @@ pre {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .botones div {
   width: 40%;
-  margin: 1% 1%;
+  margin: .5% .5%;
   height: 15vh;
   display: flex;
   justify-content: center;
@@ -153,7 +156,6 @@ pre {
 #laberintoBoton {
   background-image: url(img/Gentileschi.jpg);
   background-position: 90% 20%;
-  
   mix-blend-mode: difference;
 }
 
@@ -168,6 +170,28 @@ button {
   border-width: 0px;
   border-radius: 10px;
   cursor: pointer;
+  background-color: var(--blanco);
+}
+
+.botones #orginialLaberinto {
+  width: 60%;
+  margin: .5% 20%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFB6C1;
+  border-radius: 20px;
+  background-image: url(img/sorJuana.jpg);
+  background-size: cover;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+  background-blend-mode: difference;
+  cursor: pointer;
+}
+
+#orginialLaberinto:hover {
+  background-color: var(--negro);
 }
 
 @media only screen and (max-width: 670px) {
@@ -175,6 +199,15 @@ button {
   body {
     background-color: var(--negro);
     color: var(--blanco);
+    animation-name: fondoCuerpo;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+  }
+
+  @keyframes fondoCuerpo {
+    0%  {background-color: var(--negro) }
+    50%  {background-color: #212121 }
+    100%  {background-color: var(--negro) }
   }
   
   .cajaTxt {
@@ -183,7 +216,7 @@ button {
   }
 
   header {
-    margin: 5% 0%;
+    margin: 3% 0%;
   }
 
   main {
@@ -199,7 +232,7 @@ button {
     font-size: 1.2em;
   }
 
-  h3 {
+  h4 {
     width: 100%;
     font-size: 1em;
     padding: 5% 0%;
@@ -209,4 +242,16 @@ button {
     font-size: 1em;
   }
 
+  .botones div {
+    width: 45%;
+    margin: 1% 1%;
+    height: 15vh;
+  }
+
+  .botones #orginialLaberinto {
+    width: 90%;
+    margin: .5% 5%;
+    height: 15vh;
+  }
+  
 }

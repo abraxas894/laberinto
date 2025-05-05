@@ -43,9 +43,7 @@ const dibujar = () => {
   let r = Math.floor(Math.random() * 150);
   let circ = Math.PI * 2;
 
-  let trazoAleatorio = Math.floor(Math.random() * 15)    
-
-  ctx.strokeStyle = colorAleatorio;
+  ctx.strokeStyle = colorHEX();
   
   let numeroCirculos = Math.floor(Math.random() * 7);
   for (let i = 0; i <= numeroCirculos; i++) {
