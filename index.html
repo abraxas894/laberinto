@@ -3,7 +3,7 @@
 <head>
   <title>Laberinto endecasílabo</title>
   <meta charset="utf-8" />
-  <meta name="description" content="Laberinto endecasílabo pretende explorar las posibilidades compositivas a través de generar múltiples lecturas del poema homónimo que escribió Sor Juana Inés de la Cruz durante el S. XVII." />
+  <meta name="description" content="Laberinto endecasílabo explora las posibilidades generativas y las múltiples lecturas del poema homónimo de Sor Juana Inés de la Cruz." />
   <meta name="keywords" content="laberinto endecasilabo, poemas sor juana, poesia generativa, poemas generativos, poemas que se escriben solos, poesia permutativa, poesia combinatoria, literatura expandida, poesia expandida" />
   <meta name="author" content="Sor Juana Inés de la Cruz, ft. Eduardo Yael" />
   <meta name="" content="" />
@@ -19,11 +19,11 @@
   <script defer src="laberintoOriginal.js"></script>
   <meta property="og:site_name" content="Laberinto endecasílabo" /> 
   <meta property="og:title" content="Laberinto endecasílabo" /> 
-  <meta name="og:description" content="Laberinto endecasílabo pretende explorar las posibilidades compositivas a través de generar múltiples lecturas del poema homónimo que escribió Sor Juana Inés de la Cruz durante el S. XVII." />
+  <meta name="og:description" content="Laberinto endecasílabo explora las posibilidades generativas y las múltiples lecturas del poema homónimo de Sor Juana Inés de la Cruz." />
   <meta property="og:url" content="https://abraxas894.github.io/laberinto/" /> 
   <meta property="og:image" content="https://abraxas894.github.io/laberinto/img/silenio.jpg" />
   <meta name="og:email" content="artd_kda@hotmail.com" />
-  <meta name="og:country-name" content="MEX" />
+  <meta name="og:country-name" content="MX" />
 </head>
 <body>
   <div class="cajaTxt">
@@ -32,8 +32,13 @@
       <canvas id="figuraPortada" width="1200" height="200"></canvas>
     </section>
 
-    <nav>
-      
+    <nav class="menuLaberinto">
+      <ul>
+        <a href="" class="activo"><li>Laberinto</li></a>
+        <a href="sobrelaberinto/index.html"><li>¿Por qué cruzar este laberinto?</li></a>
+        <a href="obsesion/index.html"><li>Obsesión aleatoria</li></a>
+        <!-- <li><a href=""></a></li> -->
+      </ul>
     </nav>
 
     <header id="encabezado">
@@ -51,7 +56,9 @@
     </section> -->
 
     <section class="ornamenta">
-      <p>&#x2767;</p> <!-- [2767]: ❧ -->
+      <div>&#x2014; &#x2003;</div>
+      <div id="hedera" onclick="variosTaches()">&#x2767;</div> <!-- [2767]: ❧ -->
+      <div>&#x2003; &#x2014;</div> 
     </section>
 
     <!-- <div id='' style='background-color: #00008b;'>
@@ -115,6 +122,12 @@
   <span id="v31c1">parados</span> —— <span id="v31c2">calmen</span> —— <span id="v31c3">el Amor y el Tiempo</span>
   <span id="v32c1">suspensos</span> —— <span id="v32c2">de que</span> —— <span id="v32c3">nos miren milagrosos.</span>
       </pre>
+
+      <section class="ornamenta">
+        <div>&#x2014; &#x2003;</div>
+        <div id="" onclick="vecesLineas()">&#x2767;</div> <!-- [2767]: ❧ -->
+        <div>&#x2003; &#x2014;</div> 
+      </section>
 
       <section class="botones">
         <div id="orginialLaberinto" onclick="location.reload()" title="🐦‍🔥">

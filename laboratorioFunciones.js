@@ -12,3 +12,11 @@ const obtenerColumna = () => {
 }
 
 obtenerColumna();
+
+
+
+  let nuevoSpan = document.createElement('span');
+  nuevoSpan.innerHTML = 'h';
+  nuevoSpan.style.color = '#008b8b';
+  nuevoSpan.style.fontFamily = 'enmendadura';
+  prueba.appendChild(nuevoSpan);

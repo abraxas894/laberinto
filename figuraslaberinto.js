@@ -4,14 +4,14 @@ const colorHEX = () => {
   return color;
 };
 
-const invertirColorHEX = (colorFondo) => {
+const invertirColorHEX = (colorHEX) => {
   // Elimina el "#" si está presente
-  colorFondo = colorFondo.replace('#', '');
+  colorHEX = colorHEX.replace('#', '');
 
   // Convierte el HEX a RGB
-  const r = parseInt(colorFondo.substring(0, 2), 16);
-  const g = parseInt(colorFondo.substring(2, 4), 16);
-  const b = parseInt(colorFondo.substring(4, 6), 16);
+  const r = parseInt(colorHEX.substring(0, 2), 16);
+  const g = parseInt(colorHEX.substring(2, 4), 16);
+  const b = parseInt(colorHEX.substring(4, 6), 16);
 
   // Calcula el inverso de cada componente
   const rInverso = 255 - r;

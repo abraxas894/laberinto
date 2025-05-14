@@ -83,7 +83,7 @@ const lineasLaberinto = () => {
   let unVerso = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
   unVerso.style.textDecorationLine = 'line-through';
   unVerso.style.textDecorationThickness = `${rangoAleatorio(10, 90)}%`;
-  unVerso.style.textDecorationColor = `${distintoColorAleatorio()}`;
+  unVerso.style.textDecorationColor = `rgba(25, 25, 25, .${rangoAleatorio(80, 90)})`;
 }
 
 const vecesLineas = () => {
@@ -93,4 +93,32 @@ const vecesLineas = () => {
     lineasLaberinto();
   }
 }
+
+// función para trazar tachecitos en el Laberinto
+
+const trazarTaches = () => {
+  let enmienda = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
+  let figuraTache = ['a', 'b', 'c', 'f', 'g', 'h', 'l', 'n', 's', 't', 'v', 'w', 'x', 'W', '1', '2', '3', '5'];
+  enmienda.innerHTML = figuraTache[rangoAleatorio(0, 18)];
+  enmienda.style.color = `${distintoColorAleatorio()}`;
+  enmienda.style.fontFamily = 'enmendadura';
+  enmienda.style.fontSize = '2em';
+}
+
+const variosTaches = () => {
+  let repetirTaches = rangoAleatorio(5, 15);
+  console.log(`Existen ${repetirTaches} enmiendas`);
+  for (let i = 1; i <= repetirTaches; i++) {
+    trazarTaches();
+  }
+}
+
+// cambiar el color de Hedera 
+
+const hedera = () => {
+  let hederaColor = document.getElementById('hedera');
+  hederaColor.style.color = `${distintoColorAleatorio()}`; 
+}
+
+hedera();
 
