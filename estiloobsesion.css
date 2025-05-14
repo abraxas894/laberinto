@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+:root {
+  --blanco: #ffe4e1;
+  --rosita: #ffd1cc;
+  --negro: #191919;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: var(--negro);
+  background-color: var(--rosita);
+  animation-name: fondoCuerpo;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fondoCuerpo {
+  0%  {background-color: var(--rosita);}
+  50%  {background-color: var(--blanco);}
+  100%  {background-color: var(--rosita);}
+}
+
+.cajaTxt {
+  width: 70%;
+  margin: 0% 15%;
+}
+
+nav {
+  width: 100%;
+  margin: 1% 0% 0%;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #c969c9;
+}
+
+.menuLaberinto ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.menuLaberinto a {
+  display: inline;
+  width: 33.3333%;
+  padding: .5% 0%;
+  font: normal 1.2em/1.3em 'Alegreya', serif;
+  text-align: center;
+  text-decoration-line: none;
+  color: var(--blanco);
+}
+
+.menuLaberinto a:hover {
+  background-color: var(--blanco);
+  color: #c969c9;
+}
+
+.menuLaberinto .activo {
+  background-color: var(--blanco);
+  color: #c969c9;
+  animation-name: fondoCuerpo;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.ornaMenu {
+  font-size: .8em;
+  color: #A9A9A9;
+}
+
+section canvas {
+  width: 100%;
+  margin: 0% 0% 0%;
+  background-color: #3300ab;
+  overflow: visible;
+  border-radius: 0px 0px 10px 10px;
+}
+
+h1, h2, h3, h4, p, pre {
+  font-family: 'Alegreya';
+}
+
+h1 {
+  font: normal 3em/1em 'Alegreya', serif;
+  text-align: right;
+  margin: 2% 0%;
+  padding: 2% 3%;
+  background-color: var(--negro);
+  color: var(--rosita);
+  border-style: solid;
+  border-color: #c969c9;
+  border-width: 5px 10px 0px 0px;
+  border-radius: 10px 10px;
+}
+
+h2 {
+  font: normal 1.5em/1em 'Alegreya', serif;
+  padding: 0% 0% 3%;
+}
+
+h4 {
+  font: normal 1em/1em 'AlegreyaSC', serif;
+  width: 50%;
+  text-align: center;
+}
+
+header span {
+  font: normal italic normal 1em/1.3em 'Alegreya', serif;
+  padding: 2% 0%;
+  text-align: center;
+}
+
+p {
+  width: 80%;
+  margin: 2% 0%;
+  padding: 0% 5%;
+  font: normal 1.4em/1.4em 'Alegreya', serif;
+  text-align: justify;
+}
+
+pre {
+  font: normal 1.2em/1.4em 'Alegreya', serif;
+}
+
+.versalitas {
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 670px) {
+  
+  body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    animation-name: fondoCuerpo;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+  }
+
+  @keyframes fondoCuerpo {
+    0%  {background-color: var(--negro) }
+    50%  {background-color: #212121 }
+    100%  {background-color: var(--negro) }
+  }
+  
+  .cajaTxt {
+    width: 90%;
+    margin: 0% 5%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    padding: 5% 0% 0%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    width: 100%;
+    font-size: 1em;
+    padding: 5% 0%;
+  }
+
+  pre {
+    font-size: 1em;
+  }
+}

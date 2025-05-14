@@ -38,7 +38,7 @@ const cambiarPrimera = () => {
     document.getElementById(`v${i + 1}c1`).innerHTML = nuevaPrimera[i];
   }
   for (let j = 1; j <= 32; j = j + 4) {
-    document.getElementById(`v${j}c1`).style.color = '#F08080';
+    document.getElementById(`v${j}c1`).style.color = '#e73232';
     document.getElementById(`v${j}c1`).style.textTransform = 'uppercase';
   }
 }
@@ -82,12 +82,12 @@ const cambiarTercera = () => {
 const lineasLaberinto = () => {
   let unVerso = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
   unVerso.style.textDecorationLine = 'line-through';
-  unVerso.style.textDecorationThickness = `${rangoAleatorio(10, 90)}%`;
+  unVerso.style.textDecorationThickness = `${rangoAleatorio(30, 90)}%`;
   unVerso.style.textDecorationColor = `rgba(25, 25, 25, .${rangoAleatorio(80, 90)})`;
 }
 
 const vecesLineas = () => {
-  let repetirVeces = rangoAleatorio(20, 35);
+  let repetirVeces = rangoAleatorio(10, 25);
   console.log(`Existen ${repetirVeces} pasillos`);
   for (let i = 1; i <= repetirVeces; i++) {
     lineasLaberinto();
