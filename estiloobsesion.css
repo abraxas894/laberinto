@@ -130,6 +130,35 @@ pre {
   font: normal 1.2em/1.4em 'Alegreya', serif;
 }
 
+.ornaDing {
+  text-align: center;
+  color: #c969c9;
+}
+
+figure {
+  width: 30%;
+  margin: 0% 35%;
+  background-color: var(--negro);
+  border-style: solid;
+  border-width: 0px 20px 0px 0px;
+  border-color: #c969c9;
+  border-radius: 0px 50px 50px 0px;
+}
+
+figure img {
+  width: 90%;
+  margin: 0% 0% 0% 10%;
+  border-radius: 0px 30px 30px 0px;
+}
+
+figcaption {
+  font: normal 1.2em/1.4em 'Alegreya', serif;
+  color: var(--negro);
+  background-color: #c969c9;
+  border-radius: 0px 0px 30px 0px;
+  text-align: center;
+}
+
 .versalitas {
   font-variant: small-caps;
   letter-spacing: 2px;
@@ -156,9 +185,55 @@ pre {
     margin: 0% 5%;
   }
 
+  nav {
+    width: 70%;
+    margin: 5% 15% 0%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--rosita);
+  }
+
+  .menuLaberinto ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .menuLaberinto a {
+    display: inline;
+    width: 100%;
+    padding: .5% 0%;
+    font: normal 1em/1.3em 'Alegreya', serif;
+    text-align: center;
+    text-decoration-line: none;
+    color: var(--negro);
+  }
+
+  .menuLaberinto a:hover {
+    background-color: var(--blanco);
+    color: #c969c9;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .menuLaberinto .activo {
+    background-color: var(--blanco);
+    color: #c969c9;
+    animation-name: fondoCuerpo;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  .ornaMenu {
+    font-size: .8em;
+    color: #A9A9A9;
+  }
+
   h1 {
-    font-size: 2.2em;
-    padding: 5% 0% 0%;
+    font-size: 2em;
+    padding: 2% 5% 0%;
   }
 
   h2 {
@@ -169,6 +244,13 @@ pre {
     width: 100%;
     font-size: 1em;
     padding: 5% 0%;
+  }
+
+  p {
+    width: 90%;
+    margin: 2% 0%;
+    padding: 0% 5%;
+    font: normal 1em/1.4em 'Alegreya', serif;
   }
 
   pre {

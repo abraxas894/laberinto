@@ -300,6 +300,52 @@ button {
     margin: 2% 0%;
   }
 
+  nav {
+    width: 70%;
+    margin: 5% 15% 0%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--rosita);
+  }
+
+  .menuLaberinto ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .menuLaberinto a {
+    display: inline;
+    width: 100%;
+    padding: .5% 0%;
+    font: normal 1em/1.3em 'Alegreya', serif;
+    text-align: center;
+    text-decoration-line: none;
+    color: var(--negro);
+  }
+
+  .menuLaberinto a:hover {
+    background-color: var(--blanco);
+    color: #c969c9;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .menuLaberinto .activo {
+    background-color: var(--blanco);
+    color: #c969c9;
+    animation-name: fondoCuerpo;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  .ornaMenu {
+    font-size: .8em;
+    color: var(--negro);
+  }
+
   h1 {
     font-size: 2.2em;
     padding: 5% 0% 0%;
@@ -317,6 +363,13 @@ button {
 
   pre {
     font-size: 1em;
+  }
+
+  p {
+    width: 80%;
+    margin: 2% 0%;
+    padding: 0% 5%;
+    font: normal 1em/1.4em 'Alegreya', serif;
   }
 
   .botones div {
