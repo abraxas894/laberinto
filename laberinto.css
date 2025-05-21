@@ -18,11 +18,11 @@
 
 body {
   color: var(--negro);
-  background-color: var(--rosita);
-  animation-name: fondoCuerpo;
+  background-color: var(--blanco);
+  /* animation-name: fondoCuerpo;
   animation-duration: 30s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
 @keyframes fondoCuerpo {
@@ -43,6 +43,58 @@ header {
   align-items: center; 
 }
 
+nav {
+  width: 100%;
+  margin: 0% 0% 0%;
+  border-radius: 10px;
+  background-color: var(--negro);
+}
+
+.menuLaberinto ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font: normal 1.3vw/1em 'Ysabeau', serif;
+}
+
+.menuLaberinto a {
+  flex: auto;
+  padding: 1% 0%;
+  text-align: center;
+  text-decoration-line: none;
+  color: var(--blanco);
+}
+
+.menuLaberinto a:hover {
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.menuLaberinto .activo {
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.ornaMenu {
+  font-size: .7em;
+}
+
+.esteMenu {
+  display: none;
+}
+
+section canvas {
+  width: 100%;
+  margin: 0% 0% 0%;
+  background-color: #ab0033;
+  overflow: visible;
+  border-radius: 0px 0px 10px 10px;
+}
+
 main {
   width: 100%;
   display: flex;
@@ -59,75 +111,22 @@ main {
   border-radius: 20px;
 }
 
-nav {
-  width: 100%;
-  margin: 1% 0% 0%;
-  border-radius: 10px 10px 10px 10px;
-  background-color: #c969c9;
-}
-
-.menuLaberinto ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.menuLaberinto a {
-  display: inline;
-  width: 33.3333%;
-  padding: .5% 0%;
-  font: normal 1.2em/1.3em 'Alegreya', serif;
-  text-align: center;
-  text-decoration-line: none;
-  color: var(--blanco);
-}
-
-.menuLaberinto a:hover {
-  background-color: var(--blanco);
-  color: #c969c9;
-}
-
-.menuLaberinto .activo {
-  background-color: var(--blanco);
-  color: #c969c9;
-  animation-name: fondoCuerpo;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-}
-
-.ornaMenu {
-  font-size: .8em;
-  color: #A9A9A9;
-}
-
-section canvas {
-  width: 100%;
-  margin: 0% 0% 0%;
-  background-color: #ab0033;
-  overflow: visible;
-  border-radius: 0px 0px 10px 10px;
-}
-
 h1, h2, h3, h4, p, pre {
   font-family: 'Alegreya';
 }
 
 h1 {
-  font: normal 2.5em/1em 'Alegreya', serif;
+  font: normal 3.2vw/1em 'Alegreya', serif;
   padding: 3% 0% 0%;
 }
 
 h2 {
-  font: normal 1.5em/1em 'Alegreya', serif;
+  font: normal 1.8vw/1em 'Alegreya', serif;
   padding: 0% 0% 3%;
 }
 
 h4 {
-  font: normal 1em/1em 'AlegreyaSC', serif;
+  font: normal 1.1vw/1.2em 'AlegreyaSC', serif;
   width: 50%;
   text-align: center;
 }
@@ -139,15 +138,15 @@ header span {
 }
 
 p {
-  font: normal 1em/1.3em 'Alegreya', serif;
+  font: normal 1.1vw/1.3em 'Alegreya', serif;
 }
 
 pre {
-  font: normal 1.2em/1.4em 'Alegreya', serif;
+  font: normal 1.4vw/1.4em 'Alegreya', serif;
 }
 
 .ornamenta {
-  font: normal 1.2em/1em '', serif;
+  font: normal 1.4vw/1em '', serif;
   text-align: center;
   margin: 0% 0% 2%;
   display: flex;
@@ -169,16 +168,11 @@ pre {
 .botones {
   width: 100%;
   padding: 0% 3%;
-  margin: 0% 0% 3%;
+  margin: 0% 0% 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* background-color: #191919;
-  border-radius: 200px;
-  background-image: url(img/sanJeronimo.jpg);
-  background-size: cover;
-  background-position: 0% 60%; */
 }
 
 .botones div {
@@ -243,7 +237,7 @@ pre {
 }
 
 button {
-  font: italic normal normal 1em/1.2em 'Flamenco', monospace;
+  font: normal normal normal 1.1vw/1.2em 'Flamenco', monospace;
   padding: 3% 10%;
   border-width: 0px;
   border-radius: 10px;
@@ -253,7 +247,7 @@ button {
 
 .botones #orginialLaberinto {
   width: 60%;
-  margin: .5% 20%;
+  margin: 0% 20%;
   height: 15vh;
   display: flex;
   justify-content: center;
@@ -267,121 +261,91 @@ button {
 }
 
 #orginialLaberinto:hover {
-  background-color: #4682B4;
-  background-blend-mode: difference;
+  background-color: var(--negro);
+  background-blend-mode: luminosity;
 }
 
-@media only screen and (max-width: 670px) {
-  
-  body {
-    background-color: var(--negro);
-    color: var(--blanco);
-    animation-name: fondoCuerpo;
-    animation-iteration-count: infinite;
-    animation-duration: 30s;
-  }
-
-  @keyframes fondoCuerpo {
-    0%  {background-color: var(--negro) }
-    50%  {background-color: #212121 }
-    100%  {background-color: var(--negro) }
-  }
-  
-  .cajaTxt {
-    width: 90%;
-    margin: 0% 5%;
-  }
-
-  header {
-    margin: 3% 0%;
-  }
-
-  main {
-    margin: 2% 0%;
-  }
-
-  nav {
-    width: 70%;
-    margin: 5% 15% 0%;
-    border-radius: 10px 10px 10px 10px;
-    background-color: var(--rosita);
-  }
-
-  .menuLaberinto ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .menuLaberinto a {
-    display: inline;
-    width: 100%;
-    padding: .5% 0%;
-    font: normal 1em/1.3em 'Alegreya', serif;
-    text-align: center;
-    text-decoration-line: none;
-    color: var(--negro);
-  }
-
-  .menuLaberinto a:hover {
-    background-color: var(--blanco);
-    color: #c969c9;
-    border-radius: 10px 10px 10px 10px;
-  }
-
-  .menuLaberinto .activo {
-    background-color: var(--blanco);
-    color: #c969c9;
-    animation-name: fondoCuerpo;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-  }
-
-  .ornaMenu {
-    font-size: .8em;
-    color: var(--negro);
-  }
-
-  h1 {
-    font-size: 2.2em;
-    padding: 5% 0% 0%;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  h4 {
-    width: 100%;
-    font-size: 1em;
-    padding: 5% 0%;
-  }
-
-  pre {
-    font-size: 1em;
-  }
-
-  p {
-    width: 80%;
-    margin: 2% 0%;
-    padding: 0% 5%;
-    font: normal 1em/1.4em 'Alegreya', serif;
-  }
-
-  .botones div {
-    width: 45%;
-    margin: 1% 1%;
-    height: 15vh;
-  }
-
-  .botones #orginialLaberinto {
-    width: 90%;
-    margin: .5% 5%;
-    height: 15vh;
-  }
-  
+footer {
+  width: 100%;
+  height: 20vh;
+  color: var(--blanco);
+  background-image: url(img/fondoNegro.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0px 0px;
 }
+
+footer .fDeli {
+  width: 33.33%;
+}
+
+footer a {
+  text-decoration-line: none;
+}
+
+footer .fDeli h3 {
+  width: 90%;
+  margin: 0% 5%;
+  font: normal 2.5vw/1em 'Ysabeau', serif;
+  text-align: center;
+  color: var(--blanco);
+  font-weight: 200;
+  padding: 2% 0%;
+  border-radius: 10px;
+}
+
+footer .fDeli .deliT { 
+  font-family: 'Ysabeau SC', serif;
+}
+
+footer .fDeli img {
+  width: 70%;
+  margin: 0% 15%;
+}
+
+footer nav {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer nav a {
+  font: normal 1.2vw/1.4em 'Flamenco', serif;
+  color: var(--blanco);
+  text-decoration-line: none;
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+
+footer .fRS {
+  width: 33.33%;
+}
+
+footer .fRS a, p {
+  font: normal 1.2vw/1.2em 'Flamenco', serif;
+  color: var(--blanco);
+ }
+
+article {
+  width: 80%;
+  margin: 0% 10%;
+}
+
+article p {
+  font: normal 1.6vw/1.4em 'Alegreya', serif;
+  text-align: justify;
+  color: var(--negro);
+  margin: 3% 0%;
+}
+
+ figure {
+  width: 50%;
+  margin: 0% 25%;
+ }
+
+ figure img {
+  width: 30%;
+ }

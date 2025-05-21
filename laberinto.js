@@ -87,7 +87,7 @@ const lineasLaberinto = () => {
 }
 
 const vecesLineas = () => {
-  let repetirVeces = rangoAleatorio(10, 25);
+  let repetirVeces = rangoAleatorio(15, 25);
   console.log(`Existen ${repetirVeces} pasillos`);
   for (let i = 1; i <= repetirVeces; i++) {
     lineasLaberinto();
@@ -121,4 +121,16 @@ const hedera = () => {
 }
 
 hedera();
+
+// Desplegar menu
+
+const desplegarMenu = () => {
+  let esteMenu = document.getElementById('esteMenu');
+    if (esteMenu.className === 'menuResponsivo') {
+      esteMenu.className += ' responsivo';
+    } else {
+      esteMenu.className = 'menuResponsivo';
+    }
+  }
+
 

@@ -1,24 +1,25 @@
 <!Doctype html>
 <html lang="es-MX" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
-  <title>Laberinto endecasílabo | ¿Por qué cruzar este laberinto?</title>
+  <title>Laberinto endecasílabo | Una obsesión aleatoria</title>
   <meta charset="utf-8" />
   <meta name="description" content="" />
   <meta name="keywords" content="laberinto endecasilabo, poemas sor juana, poesia generativa, poemas generativos" />
   <meta name="author" content="Sor Juana Inés de la Cruz, ft. Eduardo Yael" />
   <meta name="" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="estiloobsesion.css" />
+  <link rel="stylesheet" type="text/css" href="laberinto.css" />
+  <link rel="stylesheet" type="text/css" href="laberintomovil.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <script defer src="../laberinto.js"></script>
-  <script defer src="../figuraslaberinto.js"></script>
-  <script defer src="../dibujarTriangulos.js"></script>
-  <script defer src="../laberintoOriginal.js"></script>
+  <script defer src="laberinto.js"></script>
+  <script defer src="figuraslaberinto.js"></script>
+  <script defer src="dibujarTriangulos.js"></script>
+  <script defer src="laberintoOriginal.js"></script>
   <meta property="og:site_name" content="Laberinto endecasílabo" /> 
-  <meta property="og:title" content="Laberinto endecasílabo | ¿Por qué cruzar este laberinto?" /> 
+  <meta property="og:title" content="Laberinto endecasílabo | Una obsesión aleatoria" /> 
   <meta name="og:description" content="" />
   <meta property="og:url" content="" /> 
   <meta property="og:image" content="" />
@@ -29,21 +30,21 @@
   <div class="cajaTxt">
 
     <section id="soyUnaPortada">
-      <canvas id="figuraPortada" width="1200" height="200"></canvas>
+      <canvas id="figuraPortada" width="1200" height="200" style="background-color: #3300ab;"></canvas>
     </section>
 
     <nav class="menuLaberinto">
-      <ul>
-        <a href="index.html"><li><span class="ornaMenu">&#x2767;</span> Laberinto <span class="ornaMenu">&#x2619;</span></li></a>
-        <a href="sobrelaberinto.html"><li><span class="ornaMenu">&#x273F;</span> ¿Por qué cruzar este laberinto? <span class="ornaMenu">&#x273F;</span></li></a>
-        <a href="obsesion.html"><li><span class="ornaMenu">&#x2742;</span> Obsesión aleatoria <span class="ornaMenu">&#x2742;</span></li></a>
+      <a href="javascript:void(0);" class="esteMenu" onclick="desplegarMenu()"><div>&#x2630;</div></a>
+      <ul class="menuResponsivo" id="esteMenu">
+        <a href="index.html"><li><span class="ornaMenu">&#x25A3;</span> Laberinto <span class="ornaMenu">&#x25A3;</span></li></a>
+        <a href="sobrelaberinto.html"><li><span class="ornaMenu">&#x25C8;</span> ¿Por qué cruzar este laberinto? <span class="ornaMenu">&#x25C8;</span></li></a>
+        <a href="obsesion.html"><li><span class="ornaMenu">&#x25F0;</span> Obsesión aleatoria <span class="ornaMenu">&#x25F0;</span></li></a>
+        <!-- <a href=""><li><span class="ornaMenu"></span>  <span class="ornaMenu"></span></li></a> -->
       </ul>
     </nav>
 
-    <main>
+    <article>
       <h1>¿Por qué cruzar este laberinto?</h1>
-
-      <p class="ornaDing">&#x2742;</p>
 
       <p>Si imaginamos el espacio de la literatura, nos encontramos en un universo de papel e imaginación: la tinta nos habla y también nos reconoce. Este universo constantemente se expande y se contrae, por ejemplo, las pantallas de nuestros dispositivos se pueden llenar de poesía, ensayo y entrecruzadas narrativas; de igual forma, el brillo de nuestras pantallas cambia cuando pasamos hacia otras tonalidades digitales: cada soporte modifica nuestra relación con las palabras y la lectura también requiere distintos centro de gravitación para explorar nuestros pensamientos y emociones.</p>
 
@@ -62,7 +63,26 @@
 
       <p>Creo que este poema representa un transcurso hacia los pasillos de un laberinto textual que cambia sus paredes, la disposición métrica y la resonancia de una lectura en voz alta. Creo que también es un artefacto lúdico que nos señala el sentido de la magia textual: la naturaleza de las palabras cambia cuando modificamos sus aspectos iniciales. Este pretexto lúdico me hizo entusiasmarme y proponer una intervención un poco más radical sobre el mismo poema: las palabras que habitan entre las rayas —los pasillos del laberinto— pueden desplazarse hacia otras regiones del poema, desatando una pluralidad distinta para cada lector.</p>
 
-    </main>
+      </article>
+
+    <footer>
+        <section class="fDeli">
+          <a href="index.html"><h3>§ Deli<span class="deliT">t</span>extos §</h3></a>
+        </section>
+        <nav class="fNav">
+          <a href="index.html"><span class="ornaMenu">&#x25AA;</span> Laberinto</a>
+          <a href="sobrelaberinto.html"><span class="ornaMenu">&#x25AA;</span> ¿Por qué cruzar este laberinto?</a>
+          <a href="obsesion.html"><span class="ornaMenu">&#x25AA;</span> Una obsesión aleatoria</a>
+        </nav>
+        <section class="fRS">
+          <!-- <a href="href="https://www.instagram.com/editorialpalindromo"><i class="fab fa-instagram"></i> Instagram</a"> <br/> -->
+          <a href="https://github.com/abraxas894/laberinto"><i class="fab fa-github fa"></i> GitHub</a> <br/><br/>
+
+          <p><span>&#x2763;</span> Elaborado en la disolución extrema de la
+            Ciudad de México, México</p>
+          <p>© Palíndromo, 2025</p>
+        </section>
+      </footer>
 
   </div>
 

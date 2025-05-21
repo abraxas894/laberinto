@@ -1,0 +1,237 @@
+@media only screen and (max-width: 670px) {
+  
+  body {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
+  .cajaTxt {
+    width: 90%;
+    margin: 0% 5%;
+  }
+
+  header {
+    margin: 0% 0%;
+  }
+
+  nav {
+    width: 100%;
+    margin: 1% 0% 1%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--blanco);
+  }
+
+  a.esteMenu {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menuLaberinto .menuResponsivo {
+    display: none;
+  }
+
+  .menuLaberinto ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  } 
+
+  .menuResponsivo.responsivo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .menuLaberinto a {
+    flex: 90%;
+    flex-wrap: nowrap;
+    padding: 1.5% 0%;
+    font: normal 3.2vw/1.3em 'Alegreya', serif;
+    text-align: center;
+    text-decoration-line: none;
+    color: var(--negro);
+  }
+
+  .menuLaberinto a:hover {
+    background-color: var(--negro);
+    color: var(--blanco);
+    border-radius: 0px;
+  }
+
+  .menuLaberinto .activo {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+
+  .ornaMenu {
+    font-size: .5em;
+    color: var(--negro);
+  }  
+
+  main {
+    margin: 2% 0%;
+  }
+
+  h1 {
+    font-size: 8vw;
+    padding: 3% 0% 0%;
+  }
+
+  h2 {
+    font-size: 5vw;
+    padding: 0%;
+  }
+
+  h4 {
+    width: 100%;
+    text-align: justify-center;
+    font-size: 3vw;
+    padding: 5% 0%;
+  }
+
+  header span {
+    font: normal italic normal 3vw/1.4em 'Alegreya', serif;
+    padding: 1% 0%;
+    text-align: center;
+  }
+
+    p {
+    font: normal 1em/1.4em 'Alegreya', serif;
+    width: 80%;
+    margin: 2% 0%;
+    padding: 0% 5%;
+  }
+
+  pre {
+    font-size: 4vw;
+  }
+
+  .ornamenta {
+    font: normal 4vw/1em 'Alegreya', serif;
+  }
+
+  .botones {
+    width: 100%;
+    padding: 3% 0%;
+    margin: 2% 0%;
+    border-radius: 10px;
+  }
+
+  .botones div {
+    width: 45%;
+    margin: 1% 1%;
+    height: 13vh;
+    background-color: var(--blanco);
+    border-radius: 10px;
+  }
+
+  #primerBoton {
+    background-image: url(img/mundi.jpg);
+    background-position: 0% 50%;
+    background-blend-mode: exclusion;
+  }
+
+  #primerBoton:hover {
+    background-color: #ab0033;
+  }
+
+  #segundoBoton {
+    background-image: url(img/temaPiedad.jpg);
+    background-position: 0% 3%;
+    background-color: #FFB6C1;
+    background-blend-mode: difference;
+  }
+
+  #segundoBoton:hover{
+    background-color: #4682B4;
+  }
+
+  #tercerBoton {
+    background-image: url(img/cristoZurbaran.jpg);
+    background-position: 0% 25%;
+    background-blend-mode: difference;
+    background-color: #663399;
+  }
+
+  #tercerBoton:hover {
+    background-blend-mode: luminosity;
+  }
+
+  #laberintoBoton {
+    background-image: url(img/Gentileschi.jpg);
+    background-position: 90% 20%;
+    mix-blend-mode: difference;
+  }
+
+  button {
+    font: normal normal normal 3.3vw/1.2em 'Flamenco', monospace;
+    padding: 5% 10%;
+    border-width: 0px;
+    border-radius: 5px;
+  }
+
+  .botones #orginialLaberinto {
+    width: 90%;
+    margin: 2% 5%;
+    padding: 10% 20%;
+    height: 10vh;
+    border-radius: 10px;
+  }
+
+  #orginialLaberinto:hover {
+    background-color: #4682B4;
+    background-blend-mode: difference;
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    color: var(--negro);
+    background-image: url(img/fondoNegro.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  footer .fDeli {
+    flex: 100%;
+  }
+
+  footer a {
+    text-decoration-line: none;
+  }
+
+  footer .fDeli h3 {
+    width: 100%;
+    margin: 0% 0%;
+    font: normal 4vw/1em 'Ysabeau', serif;
+    text-align: center;
+    color: var(--blanco);
+    font-weight: 200;
+    padding: 2% 5%;
+  }
+
+  footer .fDeli .deliT { 
+    font-family: 'Ysabeau SC', serif;
+  }
+
+  footer nav {
+    display: none;
+  }
+
+  footer .fRS {
+    display: none;
+  }
+
+  .fRS a {
+    display: none;
+  }
+
+  footer .fRS p {
+    font: normal 2.5vw/1.2em 'Flamenco', serif;
+    color: var(--blanco);
+  }
+  
+}
