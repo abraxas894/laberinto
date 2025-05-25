@@ -87,11 +87,15 @@ nav {
   display: none;
 }
 
-section canvas {
+section .espacioLaberinto {
   width: 100%;
   margin: 0% 0% 0%;
   background-color: #ab0033;
   overflow: visible;
+}
+
+.espacioLaberinto canvas {
+  width: 100%;
   border-radius: 0px 0px 10px 10px;
 }
 

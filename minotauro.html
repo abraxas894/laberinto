@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Laberinto del Minotauro - Versión Funcional</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a2e;
+            font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+            color: #e0d6c2;
+        }
+        h1 {
+            color: #d4af37;
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 5px;
+        }
+        .canvas-container {
+            border: 10px solid #5d4037;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+            background: #3e2723;
+        }
+        canvas {
+            display: block;
+        }
+        .controls {
+            margin-top: 20px;
+            color: #d7ccc8;
+            text-align: center;
+            max-width: 500px;
+        }
+        .borges-quote {
+            font-style: italic;
+            color: #d4af37;
+            margin-top: 15px;
+            line-height: 1.6;
+            display: none;
+        }
+        .borges-signature {
+            font-variant: small-caps;
+            letter-spacing: 2px;
+            color: #bcaaa4;
+            display: block;
+            margin-top: 10px;
+        }
+        .dialog-em {
+            font-style: normal;
+            color: #efebe9;
+        }
+    </style>
+</head>
+<body>
+    <h1>El Laberinto del Minotauro</h1>
+    <div class="canvas-container">
+        <canvas id="mazeCanvas" width="500" height="500"></canvas>
+    </div>
+    <div class="controls">
+        <p>Usa las flechas para mover al Minotauro | R: Reiniciar</p>
+        <div id="borgesMessage" class="borges-quote"></div>
+    </div>
+
+    <script>
+        // Clase Laberinto
+        class Maze {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+                this.cellSize = 25;
+                this.grid = [];
+                this.exit = { x: width - 1, y: height - 1 };
+                this.initializeGrid();
+            }
+
+            initializeGrid() {
+                // Inicializar grid
+                for (let y = 0; y < this.height; y++) {
+                    this.grid[y] = [];
+                    for (let x = 0; x < this.width; x++) {
+                        this.grid[y][x] = {
+                            top: true, right: true, bottom: true, left: true,
+                            visited: false
+                        };
+                    }
+                }
+                this.generate();
+            }
+
+            generate() {
+                const carvePassage = (x, y) => {
+                    this.grid[y][x].visited = true;
+                    const directions = [
+                        { dx: 0, dy: -1, wall: 'top', opposite: 'bottom' },
+                        { dx: 1, dy: 0, wall: 'right', opposite: 'left' },
+                        { dx: 0, dy: 1, wall: 'bottom', opposite: 'top' },
+                        { dx: -1, dy: 0, wall: 'left', opposite: 'right' }
+                    ];
+                    this.shuffleArray(directions);
+                    
+                    for (const dir of directions) {
+                        const newX = x + dir.dx;
+                        const newY = y + dir.dy;
+                        if (newX >= 0 && newX < this.width && newY >= 0 && newY < this.height && !this.grid[newY][newX].visited) {
+                            this.grid[y][x][dir.wall] = false;
+                            this.grid[newY][newX][dir.opposite] = false;
+                            carvePassage(newX, newY);
+                        }
+                    }
+                };
+                carvePassage(Math.floor(Math.random() * this.width), Math.floor(Math.random() * this.height));
+            }
+
+            shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            canMove(x, y, direction) {
+                const cell = this.grid[y][x];
+                switch(direction) {
+                    case 'up': return !cell.top;
+                    case 'right': return !cell.right;
+                    case 'down': return !cell.bottom;
+                    case 'left': return !cell.left;
+                    default: return false;
+                }
+            }
+        }
+
+        // Clase Minotauro
+        class Minotaur {
+            constructor() {
+                this.x = 0;
+                this.y = 0;
+                this.size = 12;
+            }
+
+            draw(ctx, cellSize) {
+                // Cuerpo
+                ctx.fillStyle = '#e74c3c';
+                ctx.beginPath();
+                ctx.arc(
+                    this.x * cellSize + cellSize/2,
+                    this.y * cellSize + cellSize/2,
+                    this.size,
+                    0,
+                    Math.PI * 2
+                );
+                ctx.fill();
+                
+                // Cuernos
+                ctx.fillStyle = '#f1c40f';
+                ctx.beginPath();
+                ctx.moveTo(this.x * cellSize + cellSize/2 - 6, this.y * cellSize + cellSize/2 - 6);
+                ctx.lineTo(this.x * cellSize + cellSize/2 - 12, this.y * cellSize + cellSize/2 - 12);
+                ctx.lineTo(this.x * cellSize + cellSize/2 - 6, this.y * cellSize + cellSize/2);
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.moveTo(this.x * cellSize + cellSize/2 + 6, this.y * cellSize + cellSize/2 - 6);
+                ctx.lineTo(this.x * cellSize + cellSize/2 + 12, this.y * cellSize + cellSize/2 - 12);
+                ctx.lineTo(this.x * cellSize + cellSize/2 + 6, this.y * cellSize + cellSize/2);
+                ctx.fill();
+            }
+        }
+
+        // Clase Perseo
+        class Perseo {
+            constructor(maze) {
+                this.maze = maze;
+                this.size = 10;
+                this.resetPosition();
+            }
+            
+            resetPosition() {
+                this.x = Math.floor(Math.random() * this.maze.width);
+                this.y = Math.floor(Math.random() * this.maze.height);
+            }
+
+            draw(ctx, cellSize) {
+                // Cuerpo
+                ctx.fillStyle = '#3498db';
+                ctx.beginPath();
+                ctx.arc(
+                    this.x * cellSize + cellSize/2,
+                    this.y * cellSize + cellSize/2,
+                    this.size,
+                    0,
+                    Math.PI * 2
+                );
+                ctx.fill();
+                
+                // Espada
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(this.x * cellSize + cellSize/2, this.y * cellSize + cellSize/2 - 8);
+                ctx.lineTo(this.x * cellSize + cellSize/2, this.y * cellSize + cellSize/2 + 8);
+                ctx.stroke();
+            }
+        }
+
+        // Clase Ariadna
+        class Ariadna {
+            constructor(maze) {
+                this.x = maze.exit.x;
+                this.y = maze.exit.y;
+                this.size = 12;
+            }
+
+            draw(ctx, cellSize) {
+                // Vestido
+                ctx.fillStyle = '#9b59b6';
+                ctx.beginPath();
+                ctx.arc(
+                    this.x * cellSize + cellSize/2,
+                    this.y * cellSize + cellSize/2,
+                    this.size,
+                    0,
+                    Math.PI * 2
+                );
+                ctx.fill();
+                
+                // Hilo
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(this.x * cellSize + cellSize/2, this.y * cellSize + cellSize/2 - 10);
+                ctx.lineTo(this.x * cellSize + cellSize/2, this.y * cellSize + cellSize/2 - 4);
+                ctx.stroke();
+            }
+        }
+
+        // Juego principal
+        class Game {
+            constructor() {
+                this.canvas = document.getElementById('mazeCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.maze = new Maze(
+                    Math.floor(this.canvas.width / 25),
+                    Math.floor(this.canvas.height / 25)
+                );
+                this.minotaur = new Minotaur();
+                this.perseo = new Perseo(this.maze);
+                this.ariadna = new Ariadna(this.maze);
+                this.gameOver = false;
+                this.messageElement = document.getElementById('borgesMessage');
+                
+                this.init();
+            }
+            
+            init() {
+                this.draw();
+                document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+            }
+            
+            draw() {
+                // Limpiar canvas
+                this.ctx.fillStyle = '#2c3e50';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Dibujar laberinto
+                this.ctx.strokeStyle = '#ecf0f1';
+                this.ctx.lineWidth = 2;
+                
+                for (let y = 0; y < this.maze.height; y++) {
+                    for (let x = 0; x < this.maze.width; x++) {
+                        const cell = this.maze.grid[y][x];
+                        const xPos = x * this.maze.cellSize;
+                        const yPos = y * this.maze.cellSize;
+                        
+                        if (cell.top) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(xPos, yPos);
+                            this.ctx.lineTo(xPos + this.maze.cellSize, yPos);
+                            this.ctx.stroke();
+                        }
+                        if (cell.left) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(xPos, yPos);
+                            this.ctx.lineTo(xPos, yPos + this.maze.cellSize);
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+                
+                // Dibujar personajes
+                this.ariadna.draw(this.ctx, this.maze.cellSize);
+                this.perseo.draw(this.ctx, this.maze.cellSize);
+                this.minotaur.draw(this.ctx, this.maze.cellSize);
+                
+                // Verificar colisiones
+                if (this.minotaur.x === this.perseo.x && this.minotaur.y === this.perseo.y) {
+                    this.gameOver = true;
+                    this.showBorgesMessage(false);
+                }
+                
+                if (this.minotaur.x === this.ariadna.x && this.minotaur.y === this.ariadna.y) {
+                    this.gameOver = true;
+                    this.showBorgesMessage(true);
+                }
+            }
+            
+            showBorgesMessage(isAriadna) {
+                this.ctx.fillStyle = 'rgba(26, 26, 46, 0.85)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.messageElement.style.display = 'block';
+                
+                if (isAriadna) {
+                    this.messageElement.innerHTML = `
+                        <span class="dialog-em">—Ariadna, sé que me acusan de soberbia, y tal vez de misantropía, y tal vez de locura. Tales acusaciones (que yo castigaré a su debido tiempo) son irrisorias. Es verdad que no salgo de mi casa, pero también es verdad que sus puertas (cuyo número es infinito) están abiertas día y noche a los hombres y también a los animales. Que entre el que quiera.</span>
+                        <span class="borges-signature">—La casa de Asterión, Jorge Luis Borges</span>
+                    `;
+                } else {
+                    this.messageElement.innerHTML = `
+                        <span class="dialog-em">—¿Lo creerás, Ariadna? —dijo Teseo. El minotauro apenas se defendió.</span>
+                        <span class="borges-signature">—Jorge Luis Borges</span>
+                    `;
+                }
+            }
+            
+            handleKeyPress(e) {
+                if (this.gameOver && e.key.toLowerCase() === 'r') {
+                    this.messageElement.style.display = 'none';
+                    this.maze.initializeGrid();
+                    this.minotaur.x = 0;
+                    this.minotaur.y = 0;
+                    this.perseo.resetPosition();
+                    this.gameOver = false;
+                    this.draw();
+                    return;
+                }
+                
+                if (this.gameOver) return;
+                
+                let moved = false;
+                const key = e.key.toLowerCase();
+                
+                if (key === 'arrowup' && this.minotaur.y > 0 && !this.maze.grid[this.minotaur.y][this.minotaur.x].top) {
+                    this.minotaur.y--;
+                    moved = true;
+                }
+                else if (key === 'arrowright' && this.minotaur.x < this.maze.width - 1 && !this.maze.grid[this.minotaur.y][this.minotaur.x].right) {
+                    this.minotaur.x++;
+                    moved = true;
+                }
+                else if (key === 'arrowdown' && this.minotaur.y < this.maze.height - 1 && !this.maze.grid[this.minotaur.y][this.minotaur.x].bottom) {
+                    this.minotaur.y++;
+                    moved = true;
+                }
+                else if (key === 'arrowleft' && this.minotaur.x > 0 && !this.maze.grid[this.minotaur.y][this.minotaur.x].left) {
+                    this.minotaur.x--;
+                    moved = true;
+                }
+                
+                if (moved) {
+                    // Mover a Perseo aleatoriamente (30% de probabilidad)
+                    if (Math.random() < 0.3) {
+                        this.movePerseo();
+                    }
+                    this.draw();
+                }
+            }
+            
+            movePerseo() {
+                const directions = [];
+                if (this.perseo.y > 0 && !this.maze.grid[this.perseo.y][this.perseo.x].top) 
+                    directions.push({dx: 0, dy: -1});
+                if (this.perseo.x < this.maze.width - 1 && !this.maze.grid[this.perseo.y][this.perseo.x].right) 
+                    directions.push({dx: 1, dy: 0});
+                if (this.perseo.y < this.maze.height - 1 && !this.maze.grid[this.perseo.y][this.perseo.x].bottom) 
+                    directions.push({dx: 0, dy: 1});
+                if (this.perseo.x > 0 && !this.maze.grid[this.perseo.y][this.perseo.x].left) 
+                    directions.push({dx: -1, dy: 0});
+                
+                if (directions.length > 0) {
+                    const dir = directions[Math.floor(Math.random() * directions.length)];
+                    this.perseo.x += dir.dx;
+                    this.perseo.y += dir.dy;
+                }
+            }
+        }
+
+        // Iniciar el juego cuando se cargue la página
+        window.onload = () => {
+            new Game();
+        };
+    </script>
+</body>
+</html>

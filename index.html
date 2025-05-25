@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Flamenco:wght@300;400&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Ysabeau+SC:wght@1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <script defer src="laberinto.js"></script>
+  <script defer src="laberintoGenerativo.js"></script>
   <script defer src="figuraslaberinto.js"></script>
   <script defer src="dibujarTriangulos.js"></script>
   <script defer src="laberintoOriginal.js"></script>
@@ -30,16 +31,20 @@
 <body>
   <div class="cajaTxt">
 
-    <section id="soyUnaPortada">
+    <!-- <section id="soyUnaPortada">
       <canvas id="figuraPortada" width="1200" height="200"></canvas>
+    </section> -->
+
+    <section class="espacioLaberinto">
+      <canvas id="mazeCanvas" width="1200" height="200" style="background-color: #ab0033;"></canvas>
     </section>
 
     <nav class="menuLaberinto">
       <a href="javascript:void(0);" class="esteMenu" onclick="desplegarMenu()"><div>&#x2630;</div></a>
       <ul class="menuResponsivo" id="esteMenu">
-        <a href="index.html"><li><span class="ornaMenu">&#x25A3;</span> Laberinto <span class="ornaMenu">&#x25A3;</span></li></a>
-        <a href="sobrelaberinto.html"><li><span class="ornaMenu">&#x25C8;</span> ¿Por qué cruzar este laberinto? <span class="ornaMenu">&#x25C8;</span></li></a>
-        <a href="obsesion.html"><li><span class="ornaMenu">&#x25F0;</span> Obsesión aleatoria <span class="ornaMenu">&#x25F0;</span></li></a>
+        <a href="index.html"><li><span class="ornaMenu">&#x25A3;</span> Laberinto endecasílabo <span class="ornaMenu">&#x25A3;</span></li></a>
+        <!-- <a href="sobrelaberinto.html"><li><span class="ornaMenu">&#x25C8;</span> ¿Por qué cruzar este laberinto? <span class="ornaMenu">&#x25C8;</span></li></a> -->
+        <a href="obsesion.html"><li><span class="ornaMenu">&#x25C8;</span> Una obsesión aleatoria <span class="ornaMenu">&#x25F0;</span></li></a>
         <!-- <a href=""><li><span class="ornaMenu"></span>  <span class="ornaMenu"></span></li></a> -->
       </ul>
     </nav>
@@ -58,16 +63,16 @@
     </section>
     
     <section class="botones">
-      <div id="primerBoton" onclick="cambiarPrimera(), dibujar()" title="🐰">
+      <div id="primerBoton" onclick="cambiarPrimera(), generateAndDrawMaze()" title="🐰">
         <button title="🍆">Primera columna</button>
       </div>
-      <div id="segundoBoton" onclick="cambiarIntermedios(), dibujar()" title="🌸">
+      <div id="segundoBoton" onclick="cambiarIntermedios(), generateAndDrawMaze()" title="🌸">
         <button title="✨">Segunda columna</button>
       </div>
-      <div id="tercerBoton" onclick="cambiarTercera(), dibujar()" title="👹">
+      <div id="tercerBoton" onclick="cambiarTercera(), generateAndDrawMaze()" title="👹">
         <button title="✝️">Tercera columna</button>
       </div>
-      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), dibujar()" title="🌞">
+      <div id="laberintoBoton" onclick="cambiarPrimera(), cambiarIntermedios(), cambiarTercera(), generateAndDrawMaze()" title="🌞">
         <button title="🌝">Labrado laberinto</button>
       </div>
     </section>
@@ -142,9 +147,8 @@
           <!-- <a href="href="https://www.instagram.com/editorialpalindromo"><i class="fab fa-instagram"></i> Instagram</a"> <br/> -->
           <a href="https://github.com/abraxas894/laberinto"><i class="fab fa-github fa"></i> GitHub</a> <br/><br/>
 
-          <p><span>&#x2763;</span> Elaborado en la disolución extrema, <br/>
-            Ciudad de México, México</p>
-          <p>© Palíndromo, 2025</p>
+          <p><span>&#x2763;</span> Ciudad de México, 2025</p>
+          <p>© Palíndromo</p>
         </section>
       </footer>
 
