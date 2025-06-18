@@ -60,6 +60,7 @@ class Maze {
 
   draw(ctx, cellSize = 15) {
       // Limpiar completamente el canvas
+            
       ctx.fillStyle = '#ab0033';
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       

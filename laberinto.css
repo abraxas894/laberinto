@@ -179,6 +179,10 @@ pre {
   align-items: center;
 }
 
+.botones a {
+  width: 100%;
+}
+
 .botones div {
   width: 40%;
   margin: .5% .5%;
@@ -331,18 +335,28 @@ footer .fRS {
 footer .fRS a, p {
   font: normal 1.2vw/1.2em 'Flamenco', serif;
   color: var(--blanco);
- }
+}
 
 article {
-  width: 80%;
-  margin: 0% 10%;
+  width: 100%;
+  margin: 0% 0%;
+  background-image: url(img/Circle_Maze.png);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: 75% 75%;
+}
+
+article h1 {
+  width: 90%;
+  margin: 1% 5%;
 }
 
 article p {
+  width: 90%;
+  margin: 3% 5%;
   font: normal 1.6vw/1.4em 'Alegreya', serif;
   text-align: justify;
   color: var(--negro);
-  margin: 3% 0%;
 }
 
  figure {

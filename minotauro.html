@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Laberinto del Minotauro Móvil</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Laberinto del Minotauro Móvil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Flamenco:wght@300;400&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Ysabeau+SC:wght@1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
     <style>
         /* Estilos móviles optimizados */
         body {
+            background-color: #292929;
+        }
+
+        .laberinto {
             margin: 0;
             padding: 0;
             touch-action: manipulation;
             font-family: 'Palatino Linotype', serif;
-            background-color: #1a1a2e;
-            color: #e0d6c2;
-            overflow: hidden;
+            background-color: #292929;
+            color: #faebd7;
+            overflow: wrap;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 90vh;
         }
+
         h1 {
-            color: #d4af37;
-            text-shadow: 1px 1px 2px #000;
+            font: normal 1.8em/1.2em 'Ibarra Real Nova', serif;
+            color: #faebd7;
             margin: 10px 0;
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
             text-align: center;
             padding: 0 10px;
         }
@@ -37,14 +45,14 @@
         canvas {
             display: block;
             width: 100%;
-            height: 100%;
+            height: 90%;
             background: #2c3e50;
             border: 8px solid #5d4037;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
         }
         .controls {
-            margin-top: 15px;
+            margin-top: 5%;
             text-align: center;
             width: 95%;
             max-width: 500px;
@@ -78,10 +86,12 @@
             transform: scale(0.95);
             background: #5d4037;
         }
+
         #upBtn { grid-area: up; }
         #leftBtn { grid-area: left; }
         #rightBtn { grid-area: right; }
         #downBtn { grid-area: down; }
+
         .borges-quote {
             display: none;
             position: fixed;
@@ -107,26 +117,43 @@
             font-size: 1rem;
             cursor: pointer;
         }
+
+        .versalitas {
+            font-variant: small-caps;
+            letter-spacing: 2px;
+        }
+
+        @media only screen and (max-width: 580px) {
+
+            .laberinto {
+                flex-direction: column;
+            }
+
+        }
     </style>
 </head>
 <body>
-    <h1>El Laberinto del Minotauro</h1>
     
-    <div class="game-container">
-        <canvas id="mazeCanvas"></canvas>
-    </div>
-
-    <div class="controls">
-        <div class="touch-controls">
-            <div id="upBtn" class="touch-btn">↑</div>
-            <div id="leftBtn" class="touch-btn">←</div>
-            <div id="rightBtn" class="touch-btn">→</div>
-            <div id="downBtn" class="touch-btn">↓</div>
+    <div class="laberinto">
+        
+        
+        <div class="game-container">
+            <h1>El Laberinto del Minotauro</h1>
+            <canvas id="mazeCanvas"></canvas>
         </div>
-        <button id="restartBtn" class="restart-btn">Reiniciar (R)</button>
-    </div>
 
-    <div id="borgesMessage" class="borges-quote"></div>
+        <div class="controls">
+            <div class="touch-controls">
+                <div id="upBtn" class="touch-btn">↑</div>
+                <div id="leftBtn" class="touch-btn">←</div>
+                <div id="rightBtn" class="touch-btn">→</div>
+                <div id="downBtn" class="touch-btn">↓</div>
+            </div>
+            <button id="restartBtn" class="restart-btn">Reiniciar (R)</button>
+        </div>
+
+        <div id="borgesMessage" class="borges-quote"></div>
+    </div>
 
     <script>
         // ======================
@@ -470,14 +497,17 @@
                 
                 if (isAriadna) {
                     this.messageElement.innerHTML = `
-                        <p class="dialog-em">&#x2649;&#xfe0e; Llegaste con Ariadna, el Minotauro vive &#x2649;&#xfe0e; <br/><br/> Sé que me acusan de soberbia, y tal vez de misantropía, y tal vez de locura. Tales acusaciones (que yo castigaré a su debido tiempo) son irrisorias. Es verdad que no salgo de mi casa, pero también es verdad que sus puertas (cuyo número es infinito) están abiertas día y noche a los hombres y también a los animales. Que entre el que quiera. No hallará pompas mujeriles aquí ni el bizarro aparato de los palacios pero sí la quietud y la soledad.</p>
-                        <p class="borges-signature"><em>La casa de Asterión</em>, Jorge Luis Borges</p>
+                        <p class="versalitas">&#x2649;&#xfe0e; Llegaste con Ariadna, el Minotauro vive &#x2649;&#xfe0e;</p>
+                        <p class="dialog-em"> Sé que me acusan de soberbia, y tal vez de misantropía, y tal vez de locura. Tales acusaciones (que yo castigaré a su debido tiempo) son irrisorias. Es verdad que no salgo de mi casa, pero también es verdad que sus puertas (cuyo número es infinito) están abiertas día y noche a los hombres y también a los animales. Que entre el que quiera. No hallará pompas mujeriles aquí ni el bizarro aparato de los palacios pero sí la quietud y la soledad.</p>
+                        <p class="borges-signature"><em>La casa de Asterión</em>, <span class="versalitas">Jorge Luis Borges</span></p>
                         <button class="restart-btn" onclick="game.resetGame()">Jugar de nuevo</button>
                     `;
                 } else {
                     this.messageElement.innerHTML = `
-                        <p class="dialog-em">&#x1F5E1;&#xfe0e; Te has encontrado con Perseo &#x1F5E1;&#xfe0e; <br/><br/>  Desde entonces no me duele la soledad, porque sé que vive mi redentor y al fin se levantará sobre el polvo. Si mi oído alcanzara todos los rumores del mundo, yo percibiría sus pasos. Ojalá me lleve a un lugar con menos galerías y menos puertas. ¿Cómo será mi redentor?, me pregunto. ¿Será un toro o un hombre? ¿Será tal vez un toro con cara de hombre? ¿O será como yo? <br/> El sol de la mañana reverberó en la espada de bronce. Ya no quedaba ni un vestigio de sangre. —¿Lo creerás, Ariadna? —dijo Teseo—. El minotauro apenas se defendió.</p>
-                        <p class="borges-signature"><em>La casa de Asterión</em>, Jorge Luis Borges</p>
+                        <p class="versalitas">&#x1F5E1;&#xfe0e; Te has encontrado con Perseo &#x1F5E1;&#xfe0e;</p>
+                        <p class="dialog-em">Desde entonces no me duele la soledad, porque sé que vive mi redentor y al fin se levantará sobre el polvo. Si mi oído alcanzara todos los rumores del mundo, yo percibiría sus pasos. Ojalá me lleve a un lugar con menos galerías y menos puertas. ¿Cómo será mi redentor?, me pregunto. ¿Será un toro o un hombre? ¿Será tal vez un toro con cara de hombre? ¿O será como yo? <br/> El sol de la mañana reverberó en la espada de bronce. Ya no quedaba ni un vestigio de sangre.</p> 
+                        <p>—¿Lo creerás, Ariadna? —dijo Teseo—. El minotauro apenas se defendió.</p>
+                        <p class="borges-signature"><em>La casa de Asterión</em>, <span class="versalitas">Jorge Luis Borges</span></p>
                         <button class="restart-btn" onclick="game.resetGame()">Reintentar</button>
                     `;
                 }

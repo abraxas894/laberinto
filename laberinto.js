@@ -38,8 +38,11 @@ const cambiarPrimera = () => {
     document.getElementById(`v${i + 1}c1`).innerHTML = nuevaPrimera[i];
   }
   for (let j = 1; j <= 32; j = j + 4) {
-    document.getElementById(`v${j}c1`).style.color = '#e73232';
+    document.getElementById(`v${j}c1`).style.color = '#ab0033';
     document.getElementById(`v${j}c1`).style.textTransform = 'uppercase';
+    if (window.matchMedia("(max-width: 670px)").matches) {
+      document.getElementById(`v${j}c1`).style.color = '#f28d8d';
+    }
   }
 }
 
@@ -54,11 +57,17 @@ const cambiarIntermedios = () => {
     document.getElementById(`v${j}c2`).style.color = '#8b008b';
     document.getElementById(`v${j}c2`).style.fontVariant = 'small-caps';
     document.getElementById(`v${j}c2`).style.letterSpacing = '2px';
+    if (window.matchMedia("(max-width: 670px)").matches) {
+      document.getElementById(`v${j}c2`).style.color = '#ff80ff';
+    }
   }
   for (let k = 3; k <= 32; k = k + 4) {
     document.getElementById(`v${k}c2`).style.color = '#8b008b';
     document.getElementById(`v${k}c2`).style.fontVariant = 'small-caps';
     document.getElementById(`v${k}c2`).style.letterSpacing = '2px';
+    if (window.matchMedia("(max-width: 670px)").matches) {
+      document.getElementById(`v${k}c2`).style.color = '#ff80ff';
+    }
   }
 }
 
@@ -70,10 +79,13 @@ const cambiarTercera = () => {
     document.getElementById(`v${i + 1}c3`).innerHTML = nuevaTercera[i];
   }
   for (let j = 4; j <= 32; j = j + 4) {
-    document.getElementById(`v${j}c3`).style.color = '#4169E1';
+    document.getElementById(`v${j}c3`).style.color = '#000080';
     document.getElementById(`v${j}c3`).style.fontVariant = 'small-caps';
     document.getElementById(`v${j}c3`).style.letterSpacing = '2px';
     document.getElementById(`v${j}c3`).style.textSize = '.9em';
+    if (window.matchMedia("(max-width: 670px)").matches) {
+      document.getElementById(`v${j}c3`).style.color = '#a7b9f1';
+    }
   }   
 }
 
@@ -84,6 +96,9 @@ const lineasLaberinto = () => {
   unVerso.style.textDecorationLine = 'line-through';
   unVerso.style.textDecorationThickness = `${rangoAleatorio(30, 90)}%`;
   unVerso.style.textDecorationColor = `rgba(25, 25, 25, .${rangoAleatorio(80, 90)})`;
+  if (window.matchMedia("(max-width: 670px)").matches) {
+    unVerso.style.textDecorationColor = `rgba(255, 255, 255, .${rangoAleatorio(90, 99)})`;
+  }
 }
 
 const vecesLineas = () => {
@@ -100,7 +115,7 @@ const trazarTaches = () => {
   let enmienda = document.getElementById(`v${rangoAleatorio(1, 33)}c${rangoAleatorio(1, 4)}`);
   let figuraTache = ['a', 'b', 'c', 'f', 'g', 'h', 'l', 'n', 's', 't', 'v', 'w', 'x', 'W', '1', '2', '3', '5'];
   enmienda.innerHTML = figuraTache[rangoAleatorio(0, 18)];
-  enmienda.style.color = `${distintoColorAleatorio()}`;
+  enmienda.style.color = `rgb(${rangoAleatorio(0, 255)}, 0, 0)`;
   enmienda.style.fontFamily = 'enmendadura';
   enmienda.style.fontSize = '2em';
 }
@@ -132,5 +147,15 @@ const desplegarMenu = () => {
       esteMenu.className = 'menuResponsivo';
     }
   }
+
+
+// Arreglo excesivo para crear enlaces en los botones
+
+let botonEnlace = () => {
+  document.getElementByClassName('botones').addEventListener('click', () => {
+      window.location.href = "#poema";
+    });
+}
+
 
 
