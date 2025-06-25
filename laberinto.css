@@ -58,7 +58,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  font: normal 1.3vw/1em 'Ysabeau', serif;
+  font: normal 1.2vw/1em 'Ysabeau', serif;
 }
 
 .menuLaberinto a {
@@ -120,12 +120,12 @@ h1, h2, h3, h4, p, pre {
 }
 
 h1 {
-  font: normal 3.2vw/1em 'Alegreya', serif;
+  font: normal 3vw/1em 'Alegreya', serif;
   padding: 3% 0% 0%;
 }
 
 h2 {
-  font: normal 1.8vw/1em 'Alegreya', serif;
+  font: normal 1.6vw/1em 'Alegreya', serif;
   padding: 0% 0% 3%;
 }
 
@@ -146,7 +146,7 @@ p {
 }
 
 pre {
-  font: normal 1.4vw/1.4em 'Alegreya', serif;
+  font: normal 1.3vw/1.4em 'Alegreya', serif;
 }
 
 .ornamenta {
